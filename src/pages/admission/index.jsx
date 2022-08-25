@@ -1,11 +1,12 @@
-import React from "react";
+import { AdmissionTable } from "../../components";
+import { tableData } from "../../constants/tableData/tableData";
 import ApplicationSearchForm from "./TotalSection/ApplicationSearchForm/ApplicationSearchForm";
 import FilterButtons from "./TotalSection/FilterButtons/FilterButtons";
 import TotalSection from "./TotalSection/TotalSection";
 
 const AdmissionPage = () => {
   return (
-    <div className='w-11/12 mx-auto'>
+    <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
         <h2 className='text-latest-news-color text-center text-4xl my-3 font-bold'>
           Admission
@@ -26,6 +27,7 @@ const AdmissionPage = () => {
       <TotalSection />
       <FilterButtons />
       <ApplicationSearchForm />
+      <AdmissionTable tableData={tableData} />
     </div>
   );
 };

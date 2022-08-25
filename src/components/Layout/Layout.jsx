@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 
 const Layout = ({ children }) => {
@@ -10,9 +11,12 @@ const Layout = ({ children }) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className='flex justify-center items-center'>
-        <Sidebar />
-        <div className='flex-1 '>{children}</div>
+      <main className='relative'>
+        <Navbar />
+        <div className='flex justify-center items-center'>
+          <Sidebar />
+          <div className='w-4/5 ml-52 overflow-hidden mt-20'>{children}</div>
+        </div>
       </main>
     </div>
   );
