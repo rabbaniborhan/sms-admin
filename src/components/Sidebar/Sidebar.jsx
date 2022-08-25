@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Grid, Peoples } from "../../icons";
+import { Grid, Peoples } from "../../constants/icons";
 import Image from "next/image";
 import images from "../../assets";
 import { useState } from "react";
@@ -12,9 +12,9 @@ const Sidebar = () => {
   const [showSubAdmission, setShowSubAdmission] = useState(false);
 
   return (
-    <div className='py-6 min-h-screen w-52 bg-sidebar text-center'>
+    <div className='pt-6 h-full w-52 bg-sidebar text-center fixed left-0 top-0'>
       {/* SMS Admin panel logo */}
-      <a className='mb-8 block cursor-pointer'>
+      <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
           <Image src={images.logo} alt='sms_logo' width={100} height={40} />
         </Link>
