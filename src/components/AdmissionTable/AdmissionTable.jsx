@@ -1,10 +1,9 @@
 import { tableData } from "../../constants/tableData/tableData";
-import { Eye } from "../../constants/icons";
 import TableData from "./TableData";
 
 const AdmissionTable = () => {
   return (
-    <table className='mt-10 w-full border border-[#5E5E5E] bg-white'>
+    <table className='mt-16 w-full ring-[0.3px] ring-[#5E5E5E] bg-white'>
       <thead>
         <tr className='bg-primary'>
           <th className='py-4 px-2 text-white text-center'>Name</th>

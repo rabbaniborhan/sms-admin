@@ -1,8 +1,20 @@
 import React from "react";
 import { Eye } from "../../constants/icons";
+import { useRouter } from "next/router";
 
 const TableData = ({ tableData }) => {
-  console.log(tableData);
+  const router = useRouter();
+
+  const handlePush = (e) => {
+    e.preventDefault();
+
+    if (router.asPath === "/admission/new-admission") {
+      router.push("/admission/application-form");
+    } else if (router.asPath === "/admission/admission-payment") {
+      router.push("/admission/payment-details");
+    }
+  };
+
   return (
     <tbody>
       {tableData.map((item, i) => (
@@ -33,8 +45,10 @@ const TableData = ({ tableData }) => {
               {item.payment}
             </span>
           </td>
-          <td className='py-3 px-2 text-center'>
-            <Eye className='text-primary h-5 w-5' />
+          <td className='py-3 px-2 text-center cursor-pointer'>
+            <button onClick={handlePush}>
+              <Eye className='text-primary h-5 w-5' />
+            </button>
           </td>
         </tr>
       ))}

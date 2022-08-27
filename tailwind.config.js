@@ -11,6 +11,7 @@ module.exports = {
         primary: "#1EB3A6",
         yellow: "#FF9900",
         "primary-text": "#0D1530CC",
+        backdrop: "rgba(0, 0, 0, 0.6)",
       },
     },
     screens: {

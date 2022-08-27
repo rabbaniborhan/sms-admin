@@ -12,7 +12,7 @@ const Sidebar = () => {
   const [showSubAdmission, setShowSubAdmission] = useState(false);
 
   return (
-    <div className='pt-6 h-full w-52 bg-sidebar text-center fixed left-0 top-0'>
+    <div className='pt-6 h-full w-52 bg-sidebar text-center fixed left-0 top-0 z-20'>
       {/* SMS Admin panel logo */}
       <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
@@ -34,12 +34,12 @@ const Sidebar = () => {
         {/* Admission Link-Item */}
         <li className='w-full relative'>
           <span
-            className={`flex justify-center items-center gap-1 py-3 -ml-10 ${
-              router.asPath === "/admission" ? "bg-[#1EB3A6]" : ""
+            className={`flex justify-center items-center gap-1 py-3 -ml-10 cursor-pointer ${
+              router.asPath.includes("/admission") ? "bg-[#1EB3A6]" : ""
             }`}
             onClick={() => setShowSubAdmission(!showSubAdmission)}>
             <Peoples className='w-[18px] h-[18px] -mt-[2.5px]' />
-            <Link href='/admission'>Admission</Link>
+            <p>Admission</p>
           </span>
 
           {/* Admission Submenu */}
@@ -47,17 +47,62 @@ const Sidebar = () => {
             className={`text-xs w-full text-left font-[500] absolute -top-10 mt-2 ${
               showSubAdmission ? "visible top-10" : "hidden"
             }`}>
+            {/* Add new admission submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
-              <button className='ml-9'>Add new admission </button>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/admission/new-admission"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}
+                onClick={() => setShowSubAdmission(false)}>
+                <Link href='/admission/new-admission'>Add new admission</Link>
+              </span>
             </li>
+
+            {/* Admission payment submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
-              <button className='ml-9'>Admission payment</button>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/admission/admission-payment"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}
+                onClick={() => setShowSubAdmission(false)}>
+                <Link href='/admission/admission-payment'>
+                  Admission payment
+                </Link>
+              </span>
             </li>
+
+            {/* Print admit card submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
-              <button className='ml-9'>Print admit card</button>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/admission/admit-card"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}
+                onClick={() => setShowSubAdmission(false)}>
+                <Link href='/admission/admit-card'>Print admit card</Link>
+              </span>
             </li>
+
+            {/* Exam-Seat-Plan submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
-              <button className='ml-9'>Exam seat plan</button>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/admission/exam-seat-plan"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}
+                onClick={() => setShowSubAdmission(false)}>
+                <Link href='/admission/application-form'>Exam seat plan</Link>
+              </span>
             </li>
           </ul>
         </li>
