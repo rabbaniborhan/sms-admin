@@ -1,14 +1,15 @@
+import React from "react";
 import { AdmissionTable, FilterButtons } from "../../../components";
 import { tableData } from "../../../constants/tableData/tableData";
-import ApplicationSearchForm from "./TotalSection/ApplicationSearchForm/ApplicationSearchForm";
-import TotalSection from "./TotalSection/TotalSection";
+import PaymentSearchForm from "./PaymentTotalSection/PaymentSearchForm/PaymentSearchForm";
+import PaymentTotalSection from "./PaymentTotalSection/PaymentTotalSection";
 
-const AdmissionPage = () => {
+const AdmissionPaymentPage = () => {
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
         <h2 className='text-latest-news-color text-center text-3xl my-3 font-bold'>
-          Add New Admission
+          Admission Payment
         </h2>
         <div className='mb-10'>
           <div className='flex justify-center items-center'>
@@ -23,12 +24,13 @@ const AdmissionPage = () => {
           </div>
         </div>
       </div>
-      <TotalSection />
+
+      <PaymentTotalSection />
       <FilterButtons />
-      <ApplicationSearchForm />
+      <PaymentSearchForm />
       <AdmissionTable tableData={tableData} />
     </div>
   );
 };
 
-export default AdmissionPage;
+export default AdmissionPaymentPage;

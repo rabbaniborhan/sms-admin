@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import images from "../../../assets";
+import images from "../../../../assets";
 
 const TotalSection = () => {
   return (
-    <div className='flex justify-around items-center'>
+    <div className='w-full mx-auto flex justify-between items-center'>
       <div className='w-80 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
@@ -12,7 +12,7 @@ const TotalSection = () => {
         <span className='w-16 h-16 rounded-full bg-[#BCF1ED99] flex justify-center items-center'>
           <Image src={images.studentPng} width={45} height={45} />
         </span>
-        <div>
+        <div className='flex flex-col justify-start items-start gap-y-1'>
           <h4 className='text-3xl font-semibold text-[#1EB3A6]'>3500+</h4>
           <p className='text-xl font-semibold'>Applied</p>
           <div className='flex justify-between items-center gap-4'>
@@ -33,9 +33,9 @@ const TotalSection = () => {
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>
         <span className='w-16 h-16 rounded-full bg-[#BCF1ED99] flex justify-center items-center'>
-          <Image src={images.blackboardSvg} width={45} height={45} />
+          <Image src={images.moneyPng} width={45} height={45} />
         </span>
-        <div>
+        <div className='flex flex-col justify-start items-start gap-y-1'>
           <h4 className='text-3xl font-semibold text-[#1EB3A6]'>৳ 1,5550+</h4>
           <p className='text-xl font-semibold'>Paid</p>
           <div className='flex justify-between items-center gap-4'>
@@ -58,7 +58,7 @@ const TotalSection = () => {
         <span className='w-16 h-16 rounded-full bg-[#BCF1ED99] flex justify-center items-center'>
           <Image src={images.moneyPng} width={45} height={45} />
         </span>
-        <div>
+        <div className='flex flex-col justify-start items-start gap-y-1'>
           <h4 className='text-3xl font-semibold text-[#1EB3A6]'>৳ 20,1570+</h4>
           <p className='text-xl font-semibold'>Unpaid</p>
           <div className='flex justify-between items-center gap-4'>
