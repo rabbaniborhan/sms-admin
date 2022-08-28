@@ -5,7 +5,6 @@ import AdmissionFormInputs from "./AdmissionFormInputs";
 import AdmissionFormLabels from "./AdmissionFormLabels";
 
 const AdmissionForm = ({ setShowModal }) => {
-  console.log(setShowModal);
   return (
     <div>
       <div className='w-[1000px] mx-auto py-10 px-10 bg-white text-primary-text relative'>

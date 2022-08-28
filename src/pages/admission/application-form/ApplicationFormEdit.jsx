@@ -1,6 +1,5 @@
 import React from "react";
-import { AdmissionForm } from "../../../components";
-import Backdrop from "../../../components/AdmissionForm/Backdrop";
+import { AdmissionForm, Backdrop } from "../../../components";
 
 const ApplicationFormEdit = ({ setShowModal }) => {
   return (

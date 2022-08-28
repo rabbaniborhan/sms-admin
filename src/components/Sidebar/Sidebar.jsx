@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Grid, Peoples } from "../../constants/icons";
+import { Grid, List, Peoples } from "../../constants/icons";
 import Image from "next/image";
 import images from "../../assets";
 import { useState } from "react";
@@ -44,8 +44,8 @@ const Sidebar = () => {
 
           {/* Admission Submenu */}
           <ul
-            className={`text-xs w-full text-left font-[500] absolute -top-10 mt-2 ${
-              showSubAdmission ? "visible top-10" : "hidden"
+            className={`text-xs w-full text-left font-[500] ${
+              showSubAdmission ? "visible" : "hidden"
             }`}>
             {/* Add new admission submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
@@ -105,6 +105,17 @@ const Sidebar = () => {
               </span>
             </li>
           </ul>
+        </li>
+
+        {/* Class-Routine Link Item */}
+        <li className='w-full'>
+          <span
+            className={`flex justify-center items-center gap-1 py-3 -ml-4 ${
+              router.asPath === "/class-routine" ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <List className='w-[18px] h-[18px]' />
+            <Link href='/class-routine'>Class Routine</Link>
+          </span>
         </li>
       </ul>
     </div>

@@ -2,7 +2,7 @@ import { BsPeopleFill, BsListUl, BsFillBellFill } from "react-icons/bs";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
-import { MdEdit } from "react-icons/md";
+import { MdEdit, MdOutlineAddCircleOutline, MdDelete } from "react-icons/md";
 import { FaTimes } from "react-icons/fa";
 
 export const Grid = ({ className }) => {
@@ -35,4 +35,12 @@ export const Pencil = ({ className }) => {
 
 export const Cross = ({ className }) => {
   return <FaTimes className={className} />;
+};
+
+export const Add = ({ className }) => {
+  return <MdOutlineAddCircleOutline className={className} />;
+};
+
+export const Delete = ({ className }) => {
+  return <MdDelete className={className} />;
 };
