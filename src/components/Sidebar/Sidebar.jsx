@@ -12,7 +12,7 @@ const Sidebar = () => {
   const [showSubAdmission, setShowSubAdmission] = useState(false);
 
   return (
-    <div className='pt-6 h-full w-52 bg-sidebar text-center fixed left-0 top-0 z-20'>
+    <div className='pt-6 h-screen w-52 bg-sidebar text-center fixed left-0 top-0 z-20'>
       {/* SMS Admin panel logo */}
       <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
@@ -111,7 +111,7 @@ const Sidebar = () => {
         <li className='w-full'>
           <span
             className={`flex justify-center items-center gap-1 py-3 -ml-4 ${
-              router.asPath === "/class-routine" ? "bg-[#1EB3A6]" : ""
+              router.asPath.includes("/class-routine") ? "bg-[#1EB3A6]" : ""
             }`}>
             <List className='w-[18px] h-[18px]' />
             <Link href='/class-routine'>Class Routine</Link>

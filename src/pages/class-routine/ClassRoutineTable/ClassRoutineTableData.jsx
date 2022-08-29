@@ -5,10 +5,16 @@ import { Add, Delete, Eye } from "../../../constants/icons";
 const ClassRoutineTableData = ({ tableData }) => {
   const router = useRouter();
 
-  const handlePush = (e) => {
+  const handlePushAdd = (e) => {
     e.preventDefault();
 
     router.push("/class-routine/set-class-routine");
+  };
+
+  const handlePushShow = (e) => {
+    e.preventDefault();
+
+    router.push("/class-routine/routine");
   };
 
   return (
@@ -28,10 +34,10 @@ const ClassRoutineTableData = ({ tableData }) => {
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'></td>
           <td className='py-3 px-2 text-center'>
             <span className='space-x-2'>
-              <button onClick={handlePush}>
+              <button onClick={handlePushAdd}>
                 <Add className='text-primary h-5 w-[18px] cursor-pointer' />
               </button>
-              <button>
+              <button onClick={handlePushShow}>
                 <Eye className='text-primary h-5 w-5 cursor-pointer' />
               </button>
               <button>

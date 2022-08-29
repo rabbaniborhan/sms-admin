@@ -71,10 +71,10 @@ const ClassScheduleForm = ({ setShowModal }) => {
           </button>
         </div>
 
-        <div className='text-right mt-5'>
+        <div className='text-right mt-4'>
           <button
             type='submit'
-            className='py-1 px-6 rounded-sm bg-primary text-white text-xs font-semibold'>
+            className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold'>
             Create
           </button>
         </div>

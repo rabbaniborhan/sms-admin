@@ -1,8 +1,8 @@
 import React from "react";
 import { Cross } from "../../../../constants/icons";
-import SetClassRoutineSelector from "./SetClassRoutineFormSelector";
+import SetClassRoutineSelector from "./EditRoutineSelector";
 
-const SetClassRoutineForm = ({ setShowModal }) => {
+const EditRoutineForm = ({ setShowModal }) => {
   return (
     <div className='w-[450px] h-[310px] bg-white rounded relative'>
       <button onClick={() => setShowModal(false)}>
@@ -10,7 +10,7 @@ const SetClassRoutineForm = ({ setShowModal }) => {
       </button>
       <div>
         <h2 className='text-latest-news-color text-center text-2xl my-3 font-bold'>
-          Set Class Routine
+          Edit Routine
         </h2>
         <div className='mb-7'>
           <div className='flex justify-center items-center'>
@@ -30,8 +30,8 @@ const SetClassRoutineForm = ({ setShowModal }) => {
       <form className='px-10'>
         <div className='flex justify-center items-center gap-8'>
           <div className='flex flex-col justify-start items-start gap-[31px]'>
-            <label htmlFor=''>Weekend</label>
-            <label htmlFor=''>Class Time</label>
+            <label htmlFor=''>Subject</label>
+            <label htmlFor=''>Teacher</label>
           </div>
 
           <div className='flex flex-col justify-center items-center gap-[31px]'>
@@ -51,7 +51,7 @@ const SetClassRoutineForm = ({ setShowModal }) => {
           <button
             type='submit'
             className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold'>
-            Create
+            Update
           </button>
         </div>
       </form>
@@ -59,4 +59,4 @@ const SetClassRoutineForm = ({ setShowModal }) => {
   );
 };
 
-export default SetClassRoutineForm;
+export default EditRoutineForm;

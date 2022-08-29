@@ -5,3 +5,4 @@ export { default as Navbar } from "./Navbar/Navbar";
 export { default as Backdrop } from "./Backdrop/Backdrop";
 export { default as AdmissionForm } from "./AdmissionForm/AdmissionForm";
 export { default as FilterButtons } from "./FilterButtons/FilterButtons";
+export { default as RoutineEditButton } from "./RoutineEditButton/RoutineEditButton";
