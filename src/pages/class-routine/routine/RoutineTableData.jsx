@@ -4,10 +4,10 @@ const RoutineTableData = ({ data, setShowModal }) => {
   return (
     <tr className='text-center'>
       <td className='py-4 px-3 font-semibold text-2xl border-[0.5px] border-gray-400'>
-        {data.day}
+        {data?.day}
       </td>
 
-      {data.subject?.map((item, i) => (
+      {data?.subject?.map((item, i) => (
         <td
           id={i}
           className='group py-4 px-3  border-[0.5px] border-gray-400 relative cursor-pointer'>
