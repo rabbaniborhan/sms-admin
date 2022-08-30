@@ -11,6 +11,23 @@ const SetClassRoutine = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div>
+      <div className='mt-16 mb-24'>
+        <h2 className='text-latest-news-color text-center text-3xl my-3 font-bold'>
+          Class Routine
+        </h2>
+        <div className='mb-10'>
+          <div className='flex justify-center items-center'>
+            <span className='bg-primary p-2 mr-[-2px] heading-polygon'></span>
+            <span className='w-[300px] py-[1px] bg-primary'></span>
+            <span className='bg-primary p-2 ml-[-2px] heading-polygon'></span>
+          </div>
+          <div className='flex justify-center items-center'>
+            <span className='bg-primary p-2 mr-[-2px] heading-polygon'></span>
+            <span className='w-[200px] py-[1px] bg-primary'></span>
+            <span className='bg-primary p-2 ml-[-2px] heading-polygon'></span>
+          </div>
+        </div>
+      </div>
       <div className='w-11/12 mx-auto py-10 px-10 text-primary-text bg-white'>
         <div className='text-center space-y-2'>
           <Image src={images.sclLogo} />
