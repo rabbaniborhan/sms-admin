@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Grid, List, Peoples } from "../../constants/icons";
+import { ArrowRight, Grid, List, Peoples } from "../../constants/icons";
 import Image from "next/image";
 import images from "../../assets";
 import { useState } from "react";
@@ -8,8 +8,6 @@ import { useRouter } from "next/router";
 
 const Sidebar = () => {
   const router = useRouter();
-  // States for submenu
-  const [showSubAdmission, setShowSubAdmission] = useState(false);
 
   return (
     <div className='pt-6 h-screen w-52 bg-sidebar text-center fixed left-0 top-0 z-20'>
@@ -32,31 +30,27 @@ const Sidebar = () => {
         </li>
 
         {/* Admission Link-Item */}
-        <li className='w-full relative'>
+        <li className='w-full relative group'>
           <span
             className={`flex justify-center items-center gap-1 py-3 -ml-10 cursor-pointer ${
               router.asPath.includes("/admission") ? "bg-[#1EB3A6]" : ""
-            }`}
-            onClick={() => setShowSubAdmission(!showSubAdmission)}>
+            }`}>
             <Peoples className='w-[18px] h-[18px] -mt-[2.5px]' />
             <p>Admission</p>
           </span>
 
           {/* Admission Submenu */}
           <ul
-            className={`text-xs w-full text-left font-[500] ${
-              showSubAdmission ? "visible" : "hidden"
-            }`}>
+            className={`text-xs w-full text-left font-[500] hidden group-hover:block`}>
             {/* Add new admission submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/admission/new-admission"
+                  router.asPath === "/exams/exam-routine"
                     ? "text-[#42DCCF]"
                     : ""
-                }`}
-                onClick={() => setShowSubAdmission(false)}>
+                }`}>
                 <Link href='/admission/new-admission'>Add new admission</Link>
               </span>
             </li>
@@ -69,8 +63,7 @@ const Sidebar = () => {
                   router.asPath === "/admission/admission-payment"
                     ? "text-[#42DCCF]"
                     : ""
-                }`}
-                onClick={() => setShowSubAdmission(false)}>
+                }`}>
                 <Link href='/admission/admission-payment'>
                   Admission payment
                 </Link>
@@ -85,8 +78,7 @@ const Sidebar = () => {
                   router.asPath === "/admission/admit-card"
                     ? "text-[#42DCCF]"
                     : ""
-                }`}
-                onClick={() => setShowSubAdmission(false)}>
+                }`}>
                 <Link href='/admission/admit-card'>Print admit card</Link>
               </span>
             </li>
@@ -99,8 +91,7 @@ const Sidebar = () => {
                   router.asPath === "/admission/exam-seat-plan"
                     ? "text-[#42DCCF]"
                     : ""
-                }`}
-                onClick={() => setShowSubAdmission(false)}>
+                }`}>
                 <Link href='/admission/application-form'>Exam seat plan</Link>
               </span>
             </li>
@@ -116,6 +107,64 @@ const Sidebar = () => {
             <List className='w-[18px] h-[18px]' />
             <Link href='/class-routine'>Class Routine</Link>
           </span>
+        </li>
+
+        {/* Exam-Routine Link Item */}
+        <li className='w-full group cursor-pointer'>
+          <span
+            className={`flex justify-center items-center gap-4 ${
+              router.asPath.includes("/exams") ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <span
+              className={`flex justify-center items-center gap-1 py-3 ml-6`}>
+              <Image src={images.examIcon} />
+              <p>Exam Routine</p>
+            </span>
+            <ArrowRight className='w-5 h-5 mt-[3px]' />
+          </span>
+
+          {/* Exam-Routine Submenu */}
+          <ul
+            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            {/* Exam-Routine submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/exams/exam-routine"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/exams/exam-routine'>Exam Routine</Link>
+              </span>
+            </li>
+
+            {/* Admit-card submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/admission/admission-payment"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/exams/admit-card'>Admit card</Link>
+              </span>
+            </li>
+
+            {/* Mark distribution submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/admission/admit-card"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/exams/mark-distribution'>Mark distribution</Link>
+              </span>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>

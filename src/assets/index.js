@@ -7,6 +7,7 @@ import principal from "./principal.png";
 import sclLogo from "./school-logo.png";
 import bigLogo from "./bigLogo.png";
 import studentImg from "./ackn-image.png";
+import examIcon from "./examIcon.svg";
 
 const images = {
   logo,
@@ -18,6 +19,7 @@ const images = {
   sclLogo,
   bigLogo,
   studentImg,
+  examIcon,
 };
 
 export default images;
