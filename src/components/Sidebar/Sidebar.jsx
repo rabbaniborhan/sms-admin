@@ -144,9 +144,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/admission/admission-payment"
-                    ? "text-[#42DCCF]"
-                    : ""
+                  router.asPath === "/exams/admit-card" ? "text-[#42DCCF]" : ""
                 }`}>
                 <Link href='/exams/admit-card'>Admit card</Link>
               </span>
