@@ -30,8 +30,6 @@ const ExamRoutineTableData = ({ tableData }) => {
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.class}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'></td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'></td>
 
           <td className='py-3 px-2 text-center'>
             <span className='space-x-2'>

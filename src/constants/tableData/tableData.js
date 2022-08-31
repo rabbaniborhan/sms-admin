@@ -93,3 +93,186 @@ export const tableData = [
     payment: "PAID",
   },
 ];
+
+export const admitCardTableData = [
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+  {
+    class: "Class-1",
+    exam: "Half-Yearly",
+    session: "2022",
+  },
+];
+
+export const admitCardListData = [
+  {
+    roll: 1,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 2,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 3,
+    name: "Shakil Hossain",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 4,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 5,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 6,
+    name: "Shakil Hossain",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 7,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 8,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 9,
+    name: "Shakil Hossain",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 10,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 11,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 12,
+    name: "Shakil Hossain",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 13,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 14,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 15,
+    name: "Shakil Hossain",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 16,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 17,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 18,
+    name: "Shakil Hossain",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+  {
+    roll: 19,
+    name: "Mahbub Rahman",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+
+  {
+    roll: 20,
+    name: "Shanto kumar",
+    exam: "Annual Exam",
+    session: "2022",
+  },
+];

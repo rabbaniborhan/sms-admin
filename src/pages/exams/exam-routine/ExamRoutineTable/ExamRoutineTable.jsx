@@ -9,15 +9,12 @@ const ExamRoutineTable = () => {
       <table className='w-full ring-[0.3px] ring-[#5E5E5E] bg-white'>
         <thead>
           <tr className='bg-primary'>
-            <th className='py-4 px-8 text-white text-center'>Exam Name</th>
-            <th className='py-4 px-8 text-white text-center'>Exam Year</th>
+            <th className='py-4 px-10 text-white text-center'>Exam Name</th>
+            <th className='py-4 px-10 text-white text-center'>Exam Year</th>
 
-            <th className='py-4 px-8 text-white text-center'>Class</th>
+            <th className='py-4 px-10 text-white text-center'>Class</th>
 
-            <th className='py-4 px-8 text-white text-center'></th>
-            <th className='py-4 px-8 text-white text-center'></th>
-
-            <th className='py-4 px-8 text-white text-center'>Action</th>
+            <th className='py-4 px-10 text-white text-center'>Action</th>
           </tr>
         </thead>
 
