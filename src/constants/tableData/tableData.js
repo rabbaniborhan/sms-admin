@@ -276,3 +276,202 @@ export const admitCardListData = [
     session: "2022",
   },
 ];
+
+export const marksData = [
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+
+  {
+    name: "Mahbub Rahman",
+    roll: "1",
+    subject: "Bangla",
+    mcq: "60",
+    cq: "30",
+    total: "100",
+    grade: "A",
+  },
+];

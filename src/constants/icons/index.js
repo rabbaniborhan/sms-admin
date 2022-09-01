@@ -1,4 +1,9 @@
-import { BsPeopleFill, BsListUl, BsFillBellFill } from "react-icons/bs";
+import {
+  BsPeopleFill,
+  BsListUl,
+  BsFillBellFill,
+  BsThreeDotsVertical,
+} from "react-icons/bs";
 import { HiOutlineViewGrid } from "react-icons/hi";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
@@ -52,4 +57,8 @@ export const Delete = ({ className }) => {
 
 export const ArrowRight = ({ className }) => {
   return <MdKeyboardArrowRight className={className} />;
+};
+
+export const ThreeDots = ({ className }) => {
+  return <BsThreeDotsVertical className={className} />;
 };
