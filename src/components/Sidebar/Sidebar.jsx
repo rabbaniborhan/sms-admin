@@ -155,11 +155,65 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/admission/admit-card"
+                  router.asPath === "/exams/mark-distribution"
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
                 <Link href='/exams/mark-distribution'>Mark distribution</Link>
+              </span>
+            </li>
+          </ul>
+        </li>
+
+        {/* Results Link Item */}
+        <li className='w-full group cursor-pointer'>
+          <span
+            className={`flex justify-center items-center gap-4 ${
+              router.asPath.includes("/results") ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <span
+              className={`flex justify-center items-center gap-1 py-3 -ml-8`}>
+              <Image src={images.resultIcon} />
+              <p>Results</p>
+            </span>
+            <ArrowRight className='w-5 h-5 mt-[3px]' />
+          </span>
+
+          {/* Results Submenu */}
+          <ul
+            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            {/* Generate Result submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/results/generate-result"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/results/generate-result'>Generate Result</Link>
+              </span>
+            </li>
+
+            {/* Marksheet submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/results/marksheet" ? "text-[#42DCCF]" : ""
+                }`}>
+                <Link href='/results/create-marksheet'>Marksheet</Link>
+              </span>
+            </li>
+
+            {/* Promotion submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/results/promotion" ? "text-[#42DCCF]" : ""
+                }`}>
+                <Link href='/results/promotion'>Promotion</Link>
               </span>
             </li>
           </ul>
