@@ -21,7 +21,7 @@ const Sidebar = () => {
         {/* Dashboard Link-Item */}
         <li className='w-full'>
           <span
-            className={`flex justify-center items-center gap-1 py-3 -ml-10 ${
+            className={`flex justify-center items-center gap-2 py-3 -ml-10 ${
               router.asPath === "/" ? "bg-[#1EB3A6]" : ""
             }`}>
             <Grid className='w-[18px] h-[18px]' />
@@ -32,7 +32,7 @@ const Sidebar = () => {
         {/* Admission Link-Item */}
         <li className='w-full relative group'>
           <span
-            className={`flex justify-center items-center gap-1 py-3 -ml-10 cursor-pointer ${
+            className={`flex justify-center items-center gap-2 py-3 -ml-10 cursor-pointer ${
               router.asPath.includes("/admission") ? "bg-[#1EB3A6]" : ""
             }`}>
             <Peoples className='w-[18px] h-[18px] -mt-[2.5px]' />
@@ -101,7 +101,7 @@ const Sidebar = () => {
         {/* Class-Routine Link Item */}
         <li className='w-full'>
           <span
-            className={`flex justify-center items-center gap-1 py-3 -ml-4 ${
+            className={`flex justify-center items-center gap-2 py-3 -ml-4 ${
               router.asPath.includes("/class-routine") ? "bg-[#1EB3A6]" : ""
             }`}>
             <List className='w-[18px] h-[18px]' />
@@ -116,7 +116,7 @@ const Sidebar = () => {
               router.asPath.includes("/exams") ? "bg-[#1EB3A6]" : ""
             }`}>
             <span
-              className={`flex justify-center items-center gap-1 py-3 ml-6`}>
+              className={`flex justify-center items-center gap-2 py-3 ml-6`}>
               <Image src={images.examIcon} />
               <p>Exam Routine</p>
             </span>
@@ -172,7 +172,7 @@ const Sidebar = () => {
               router.asPath.includes("/results") ? "bg-[#1EB3A6]" : ""
             }`}>
             <span
-              className={`flex justify-center items-center gap-1 py-3 -ml-8`}>
+              className={`flex justify-center items-center gap-2 py-3 -ml-8`}>
               <Image src={images.resultIcon} />
               <p>Results</p>
             </span>
@@ -213,7 +213,7 @@ const Sidebar = () => {
                 className={`ml-9 ${
                   router.asPath === "/results/promotion" ? "text-[#42DCCF]" : ""
                 }`}>
-                <Link href='/results/promotion'>Promotion</Link>
+                <Link href='/results/student-promotion'>Promotion</Link>
               </span>
             </li>
           </ul>

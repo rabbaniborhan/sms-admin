@@ -5,7 +5,7 @@ import images from "../../../assets";
 const PaymentSlip = () => {
   return (
     <div className='w-3/4 mx-auto'>
-      <div className='w-full mx-auto pt-5 pb-1 px-10 text-primary-text bg-white relative'>
+      <div className='w-full mx-auto pt-5 pb-1 px-10 text-primary-text bg-white relative border border-gray-300'>
         <div className='absolute lg:top-[22%] lg:left-[200px] xl:left-[350px]'>
           <Image src={images.bigLogo} height={450} width={450} />
         </div>

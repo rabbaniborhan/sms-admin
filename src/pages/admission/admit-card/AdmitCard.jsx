@@ -5,7 +5,7 @@ import images from "../../../assets";
 const AdmitCard = () => {
   return (
     <div className='w-10/12 mx-auto'>
-      <div className='w-full mx-auto pt-5 pb-1 px-10 text-primary-text bg-white relative mt-16'>
+      <div className='w-full mx-auto pt-5 pb-1 px-10 text-primary-text bg-white relative mt-16 border border-gray-300'>
         <div className='absolute lg:top-[30%] lg:left-[200px] xl:left-[350px]'>
           <Image src={images.bigLogo} height={550} width={550} />
         </div>

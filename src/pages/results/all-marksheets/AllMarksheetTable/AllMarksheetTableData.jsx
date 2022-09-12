@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { Eye } from "../../../../constants/icons";
 
-const AllResultTableData = ({ tableData }) => {
+const AllMarksheetTableData = ({ tableData }) => {
   const router = useRouter();
 
   const handlePushShow = (e) => {
@@ -30,4 +30,4 @@ const AllResultTableData = ({ tableData }) => {
   );
 };
 
-export default AllResultTableData;
+export default AllMarksheetTableData;

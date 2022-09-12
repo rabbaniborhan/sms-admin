@@ -1,8 +1,8 @@
 import React from "react";
 import { Cross } from "../../../../constants/icons";
-import CreateExamRoutineFormSelector from "./CreateExamRoutineFormSelector";
+import StudentPromotionSelector from "./StudentPromotionSelector";
 
-const CreateExamRoutineForm = ({ setShowModal }) => {
+const StudentPromotionForm = ({ setShowModal }) => {
   return (
     <div>
       <div className='w-[450px] h-[380px] bg-white rounded relative'>
@@ -11,7 +11,7 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
         </button>
         <div>
           <h2 className='text-latest-news-color text-center text-2xl my-3 font-bold'>
-            Create Exam Routine
+            Student Promotion
           </h2>
           <div className='mb-7'>
             <div className='flex justify-center items-center'>
@@ -27,7 +27,7 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
           </div>
         </div>
 
-        {/* Creation form */}
+        {/* Schedule form */}
         <form className='px-8'>
           <div className='flex justify-center items-center gap-8'>
             <div className='flex flex-col justify-start items-start gap-[38px]'>
@@ -43,9 +43,9 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
             </div>
 
             <div className='flex flex-col justify-center items-center gap-5'>
-              <CreateExamRoutineFormSelector />
-              <CreateExamRoutineFormSelector />
-              <CreateExamRoutineFormSelector />
+              <StudentPromotionSelector />
+              <StudentPromotionSelector />
+              <StudentPromotionSelector />
             </div>
           </div>
 
@@ -53,7 +53,7 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
             <button
               type='submit'
               className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold'>
-              Create
+              Promote
             </button>
           </div>
         </form>
@@ -62,4 +62,4 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
   );
 };
 
-export default CreateExamRoutineForm;
+export default StudentPromotionForm;

@@ -3,7 +3,7 @@ import CreateResultFormSelector from "./CreateResultFormSelector";
 
 const CreateResultForm = () => {
   return (
-    <div className='w-[550px] h-[280px] mx-auto bg-white rounded py-7'>
+    <div className='w-[550px] h-[280px] mx-auto bg-white rounded py-7 border border-gray-300'>
       {/* Creation form */}
       <form className='px-8'>
         <div className='flex justify-center items-center gap-8'>

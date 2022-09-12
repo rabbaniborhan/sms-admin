@@ -13,7 +13,7 @@ const AdmitCardTable = ({ setShowModal }) => {
           Print
         </button>
       </div>
-      <table className='w-full ring-[0.3px] ring-[#5E5E5E] bg-white'>
+      <table className='w-full ring-[0.3px] ring-[#5E5E5E] bg-white rounded overflow-hidden'>
         <thead>
           <tr className='bg-primary'>
             <th className='py-4 px-2 text-white text-center'>Class</th>
