@@ -6,7 +6,7 @@ const NoticeBoardTableData = ({ tableData }) => {
 
   return (
     <tbody>
-      {newTableData.map((item, i) => (
+      {newTableData?.map((item, i) => (
         <tr key={i} className={`${i % 2 === 0 ? "bg-[#1EB3A61A]" : ""}`}>
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
             PDF
