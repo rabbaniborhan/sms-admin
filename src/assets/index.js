@@ -9,6 +9,9 @@ import bigLogo from "./bigLogo.png";
 import studentImg from "./ackn-image.png";
 import examIcon from "./examIcon.svg";
 import resultIcon from "./resultIcon.svg";
+import paymentSvg from "./payment.svg";
+import noticeSvg from "./notice.svg";
+import noticeImage from "./notice-img.png";
 
 const images = {
   logo,
@@ -22,6 +25,9 @@ const images = {
   studentImg,
   examIcon,
   resultIcon,
+  paymentSvg,
+  noticeSvg,
+  noticeImage,
 };
 
 export default images;

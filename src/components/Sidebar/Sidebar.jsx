@@ -28,7 +28,6 @@ const Sidebar = () => {
             <Link href='/'>Dashboard</Link>
           </span>
         </li>
-
         {/* Admission Link-Item */}
         <li className='w-full relative group'>
           <span
@@ -97,7 +96,6 @@ const Sidebar = () => {
             </li>
           </ul>
         </li>
-
         {/* Class-Routine Link Item */}
         <li className='w-full'>
           <span
@@ -108,7 +106,6 @@ const Sidebar = () => {
             <Link href='/class-routine'>Class Routine</Link>
           </span>
         </li>
-
         {/* Exam-Routine Link Item */}
         <li className='w-full group cursor-pointer'>
           <span
@@ -164,7 +161,6 @@ const Sidebar = () => {
             </li>
           </ul>
         </li>
-
         {/* Results Link Item */}
         <li className='w-full group cursor-pointer'>
           <span
@@ -211,12 +207,35 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/results/student-promotion" ? "text-[#42DCCF]" : ""
+                  router.asPath === "/results/student-promotion"
+                    ? "text-[#42DCCF]"
+                    : ""
                 }`}>
                 <Link href='/results/student-promotion'>Promotion</Link>
               </span>
             </li>
           </ul>
+        </li>
+        {/* //Payment item link */}
+        <li className='w-full'>
+          <span
+            className={`flex justify-center items-center gap-2 py-3 -ml-[50px] ${
+              router.asPath.includes("/payment") ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <Image src={images.paymentSvg} />
+            <Link href='/payment'>Payment</Link>
+          </span>
+        </li>
+
+        {/* Notice item link */}
+        <li className='w-full'>
+          <span
+            className={`flex justify-center items-center gap-2 py-3 -ml-[68px] ${
+              router.asPath.includes("/notice") ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <Image src={images.noticeSvg} />
+            <Link href='/notice'>Notice</Link>
+          </span>
         </li>
       </ul>
     </div>

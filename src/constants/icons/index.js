@@ -14,6 +14,7 @@ import {
   MdKeyboardArrowRight,
 } from "react-icons/md";
 import { FaTimes } from "react-icons/fa";
+import { BiEdit } from "react-icons/bi";
 
 export const Grid = ({ className }) => {
   return <HiOutlineViewGrid className={className} />;
@@ -61,4 +62,8 @@ export const ArrowRight = ({ className }) => {
 
 export const ThreeDots = ({ className }) => {
   return <BsThreeDotsVertical className={className} />;
+};
+
+export const Edit = ({ className }) => {
+  return <BiEdit className={className} />;
 };
