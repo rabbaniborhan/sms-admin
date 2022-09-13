@@ -1,7 +1,8 @@
-import { tableData } from "../../constants/tableData/tableData";
-import TableData from "./TableData";
+import React from "react";
+import { tableData } from "../../../constants/tableData/tableData";
+import PaymentTableData from "./PaymentTableData";
 
-const AdmissionTable = () => {
+const PaymentTable = () => {
   return (
     <div className='mt-16'>
       <p className='font-semibold text-sm mb-6'>10 Result</p>
@@ -20,10 +21,10 @@ const AdmissionTable = () => {
           </tr>
         </thead>
 
-        <TableData tableData={tableData} />
+        <PaymentTableData tableData={tableData} />
       </table>
     </div>
   );
 };
 
-export default AdmissionTable;
+export default PaymentTable;
