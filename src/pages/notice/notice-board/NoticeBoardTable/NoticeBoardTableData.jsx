@@ -2,7 +2,7 @@ import React from "react";
 import { Delete, Edit } from "../../../../constants/icons";
 
 const NoticeBoardTableData = ({ tableData }) => {
-  const newTableData = tableData.slice(0, 2);
+  const newTableData = tableData?.slice(0, 2);
 
   return (
     <tbody>
