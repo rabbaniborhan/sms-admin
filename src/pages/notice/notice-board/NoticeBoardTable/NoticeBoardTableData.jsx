@@ -1,7 +1,7 @@
 import React from "react";
 import { Delete, Edit } from "../../../../constants/icons";
 
-const NoticeBoardTableData = ({ tableData }) => {
+const NoticeBoardTableData = ({ tableData, setShowModal }) => {
   const newTableData = tableData?.slice(0, 2);
 
   return (
@@ -19,7 +19,7 @@ const NoticeBoardTableData = ({ tableData }) => {
           </td>
 
           <td className='py-3 px-2 text-center cursor-pointer space-x-2'>
-            <button>
+            <button onClick={() => setShowModal(true)}>
               <Edit className='text-primary h-5 w-5' />
             </button>
             <button>
