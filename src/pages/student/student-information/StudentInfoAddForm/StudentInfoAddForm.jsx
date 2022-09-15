@@ -1,19 +1,19 @@
 import React from "react";
-import { Cross } from "../../constants/icons";
-import AdmissionFormColons from "./AdmissionFormColons";
-import AdmissionFormInputs from "./AdmissionFormInputs";
-import AdmissionFormLabels from "./AdmissionFormLabels";
+import { Cross } from "../../../../constants/icons";
+import StudentInfoAddFormColons from "./StudentInfoAddFormColons";
+import StudentInfoAddFormInputs from "./StudentInfoAddFormInputs";
+import StudentInfoAddFormLables from "./StudentInfoAddFormLables";
 
-const AdmissionForm = ({ setShowModal }) => {
+const StudentInfoAddForm = ({ setShowModal, title }) => {
   return (
     <div>
-      <div className='w-[1000px] mx-auto p-10 bg-white text-primary-text relative'>
+      <div className='w-[1000px] mx-auto py-10 px-10 bg-white text-primary-text relative'>
         <button onClick={() => setShowModal(false)}>
           <Cross className='w-6 h-6 absolute top-4 right-4 cursor-pointer' />
         </button>
         <div>
-          <h2 className='text-latest-news-color text-center text-2xl my-3 font-bold'>
-            Edit Application Form
+          <h2 className='text-latest-news-color text-center text-3xl my-3 font-bold'>
+            {title}
           </h2>
           <div className='mb-10'>
             <div className='flex justify-center items-center'>
@@ -32,9 +32,9 @@ const AdmissionForm = ({ setShowModal }) => {
         {/* Admission from inputs */}
         <form>
           <div className='flex justify-between items-center xl:w-4/5 lg:w-11/12 mx-auto mt-16'>
-            <AdmissionFormLabels />
-            <AdmissionFormColons />
-            <AdmissionFormInputs />
+            <StudentInfoAddFormLables />
+            <StudentInfoAddFormColons />
+            <StudentInfoAddFormInputs />
           </div>
           <div className='flex justify-end items-end gap-3 w-4/5 mx-auto mt-16'>
             <button className='bg-primary text-white py-3 w-36 rounded -mr-14'>
@@ -47,4 +47,4 @@ const AdmissionForm = ({ setShowModal }) => {
   );
 };
 
-export default AdmissionForm;
+export default StudentInfoAddForm;

@@ -237,6 +237,49 @@ const Sidebar = () => {
             <Link href='/notice'>Notice</Link>
           </span>
         </li>
+
+        {/* Student Info item link */}
+        <li className='w-full group'>
+          <span
+            className={`flex justify-center items-center gap-2 py-3 -ml-[56px] cursor-pointer ${
+              router.asPath.includes("/student") ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <Peoples className='w-[18px] h-[18px] -mt-[2.5px]' />
+            <span>Student</span>
+          </span>
+
+          {/* Student info submenu */}
+          <ul
+            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            {/* Student information submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/student/student-information"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/student/student-information'>
+                  Student Information
+                </Link>
+              </span>
+            </li>
+
+            {/* Assign subject submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/student/assign-subject"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/student/assign-subject'>Assign Subject</Link>
+              </span>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   );

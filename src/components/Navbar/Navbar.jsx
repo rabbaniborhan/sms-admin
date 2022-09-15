@@ -10,8 +10,8 @@ const Navbar = () => {
         <Image
           src={images.principal}
           alt='admin_image'
-          height={50}
-          width={50}
+          height={40}
+          width={40}
         />
         <div className='text-white'>
           <p className='text-xs'>Welcome,</p>

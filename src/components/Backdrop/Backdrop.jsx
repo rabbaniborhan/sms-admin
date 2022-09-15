@@ -11,7 +11,10 @@ const Backdrop = ({ children, setShowModal }) => {
   return (
     <div
       className={`bg-backdrop ${
-        router.asPath === "/admission/application-form" ? "absolute" : "fixed"
+        router.asPath.includes("/admission") ||
+        router.asPath.includes("/student")
+          ? "absolute"
+          : "fixed"
       } top-0 inset-0 z-10 flex justify-center items-center w-[87%] ml-auto`}
       id='backdrop'
       onClick={handleShowModal}>
