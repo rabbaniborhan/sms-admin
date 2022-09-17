@@ -280,6 +280,60 @@ const Sidebar = () => {
             </li>
           </ul>
         </li>
+
+        {/* Academic item link */}
+        <li className='w-full group'>
+          <span
+            className={`flex justify-center items-center gap-1 py-3 -ml-[43px] cursor-pointer ${
+              router.asPath.includes("/academic") ? "bg-[#1EB3A6]" : ""
+            }`}>
+            <Image src={images.principalIcon} />
+            <span>Academic</span>
+          </span>
+
+          {/* Academic submenu */}
+          <ul
+            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            {/* principal info submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/academic/principal-info"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/academic/principal-info'>Principal info</Link>
+              </span>
+            </li>
+
+            {/* teachers info submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/academic/teachers-info"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/academic/teachers-info'>Teacher's info</Link>
+              </span>
+            </li>
+
+            {/* staff info submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/academic/staff-info"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/academic/staff-info'>Staff info</Link>
+              </span>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   );
