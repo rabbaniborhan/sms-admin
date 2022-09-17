@@ -12,6 +12,14 @@ import resultIcon from "./resultIcon.svg";
 import paymentSvg from "./payment.svg";
 import noticeSvg from "./notice.svg";
 import noticeImage from "./notice-img.png";
+import principalIcon from "./principalIcon.svg";
+import malePrincipal from "./malePrincipal.png";
+import principalCV from "./principalCV.png";
+import teacher1 from "./teacher1.png";
+import teacher2 from "./teacher2.png";
+import teacher3 from "./teacher3.png";
+import teacher4 from "./teacher4.png";
+import teacher5 from "./teacher5.png";
 
 const images = {
   logo,
@@ -28,6 +36,14 @@ const images = {
   paymentSvg,
   noticeSvg,
   noticeImage,
+  principalIcon,
+  malePrincipal,
+  principalCV,
+  teacher1,
+  teacher2,
+  teacher3,
+  teacher4,
+  teacher5,
 };
 
 export default images;
