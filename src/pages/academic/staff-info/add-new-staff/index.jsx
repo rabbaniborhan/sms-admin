@@ -3,7 +3,7 @@ import React from "react";
 import images from "../../../../assets";
 import { Delete } from "../../../../constants/icons";
 
-const AddNewPrincipalPage = () => {
+const AddNewStaffPage = () => {
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -61,4 +61,4 @@ const AddNewPrincipalPage = () => {
   );
 };
 
-export default AddNewPrincipalPage;
+export default AddNewStaffPage;
