@@ -11,7 +11,7 @@ const StaffInfoPage = () => {
   const router = useRouter();
   const handlePush = (e) => {
     e.preventDefault();
-    router.push("/academic/teachers-info/add-new-staff");
+    router.push("/academic/staff-info/add-new-staff");
   };
   const arr = [
     {
