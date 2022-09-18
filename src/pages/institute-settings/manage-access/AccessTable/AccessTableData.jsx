@@ -4,7 +4,6 @@ import images from "../../../../assets";
 import AccessTableSelector from "./AccessTableSelector";
 
 const AccessTableData = ({ tableData }) => {
-  const { img } = tableData;
   return (
     <tbody>
       {tableData?.map((item, i) => (
