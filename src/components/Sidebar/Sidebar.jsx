@@ -10,7 +10,7 @@ const Sidebar = () => {
   const router = useRouter();
 
   return (
-    <div className='pt-6 h-screen w-52 bg-sidebar text-center fixed left-0 top-0 z-20'>
+    <div className='pt-6 h-screen w-52 bg-sidebar text-center fixed left-0 top-0 z-20 overflow-hidden'>
       {/* SMS Admin panel logo */}
       <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
@@ -330,6 +330,53 @@ const Sidebar = () => {
                     : ""
                 }`}>
                 <Link href='/academic/staff-info'>Staff info</Link>
+              </span>
+            </li>
+          </ul>
+        </li>
+
+        {/* Institute-settings item link */}
+        <li className='w-full group'>
+          <span
+            className={`flex justify-center items-center gap-1 py-3 -mr-[16px] cursor-pointer ${
+              router.asPath.includes("/institute-settings")
+                ? "bg-[#1EB3A6]"
+                : ""
+            }`}>
+            <Image src={images.settingsIcon} />
+            <span>Institute Settings</span>
+          </span>
+
+          {/* Institute-settings submenu */}
+          <ul
+            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            {/* Manage-access submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/institute-settings/manage-access"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/institute-settings/manage-access'>
+                  Manage Access
+                </Link>
+              </span>
+            </li>
+
+            {/* General-settings submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/institute-settings/general-settings"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/institute-settings/general-settings'>
+                  General Settings
+                </Link>
               </span>
             </li>
           </ul>
