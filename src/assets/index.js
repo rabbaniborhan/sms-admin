@@ -20,6 +20,8 @@ import teacher2 from "./teacher2.png";
 import teacher3 from "./teacher3.png";
 import teacher4 from "./teacher4.png";
 import teacher5 from "./teacher5.png";
+import settingsIcon from "./settings.svg";
+import accessImage from "./accessImage.png";
 
 const images = {
   logo,
@@ -44,6 +46,8 @@ const images = {
   teacher3,
   teacher4,
   teacher5,
+  settingsIcon,
+  accessImage,
 };
 
 export default images;
