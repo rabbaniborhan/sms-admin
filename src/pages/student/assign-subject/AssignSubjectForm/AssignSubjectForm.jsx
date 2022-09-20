@@ -5,7 +5,7 @@ import AssignSubjectFormSelector from "./AssignSubjectFormSelector";
 import SubjectSelector from "./SubjectSelector";
 
 const AssignSubjectForm = () => {
-  const [showForms, setShowForms] = useState(false);
+  const [showForms, setShowForms] = useState(true);
   const arr = [1, 2, 3, 4, 5];
   return (
     <div className='w-full mx-auto pt-5 pb-10 px-8 bg-white border border-[#0D153026] rounded'>
@@ -19,7 +19,7 @@ const AssignSubjectForm = () => {
           <AssignSubjectFormSelector />
         </div>
 
-        {!showForms ? (
+        {showForms ? (
           <div>
             <SubjectSelector />
           </div>
