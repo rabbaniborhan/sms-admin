@@ -13,7 +13,7 @@ import {
   MdDelete,
   MdKeyboardArrowRight,
 } from "react-icons/md";
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaRegTimesCircle } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
 
 export const Grid = ({ className }) => {
@@ -66,4 +66,8 @@ export const ThreeDots = ({ className }) => {
 
 export const Edit = ({ className }) => {
   return <BiEdit className={className} />;
+};
+
+export const RoundCross = ({ className }) => {
+  return <FaRegTimesCircle className={className} />;
 };
