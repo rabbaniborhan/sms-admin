@@ -380,7 +380,7 @@ const Sidebar = () => {
               </span>
             </li>
 
-            {/* General-settings submenu link */}
+            {/* Classes and Sections submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
