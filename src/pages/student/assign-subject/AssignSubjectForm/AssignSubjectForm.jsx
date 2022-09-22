@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
 import { Add, RoundCross } from "../../../../constants/icons";
@@ -5,6 +6,7 @@ import AssignSubjectFormSelector from "./AssignSubjectFormSelector";
 import SubjectSelector from "./SubjectSelector";
 
 const AssignSubjectForm = () => {
+  const router = useRouter();
   const [showForms, setShowForms] = useState(true);
   const arr = [1, 2, 3, 4, 5];
   return (
@@ -70,7 +72,9 @@ const AssignSubjectForm = () => {
         </div>
       </form>
 
-      <button className='flex justify-center items-center gap-1  -mt-8'>
+      <button
+        className='flex justify-center items-center gap-1  -mt-8'
+        onClick={() => router.push("/student/assign-subject/add-new-subject")}>
         <Add className='w-5 h-5 text-primary -mt-[2.5px]' /> Add New Subject
       </button>
     </div>

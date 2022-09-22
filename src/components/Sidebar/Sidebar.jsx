@@ -379,6 +379,21 @@ const Sidebar = () => {
                 </Link>
               </span>
             </li>
+
+            {/* General-settings submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/institute-settings/classes-and-sections"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/institute-settings/classes-and-sections'>
+                  Classes and Sections
+                </Link>
+              </span>
+            </li>
           </ul>
         </li>
       </ul>
