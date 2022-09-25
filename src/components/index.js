@@ -6,3 +6,5 @@ export { default as Backdrop } from "./Backdrop/Backdrop";
 export { default as AdmissionForm } from "./AdmissionForm/AdmissionForm";
 export { default as FilterButtons } from "./FilterButtons/FilterButtons";
 export { default as RoutineEditButton } from "./RoutineEditButton/RoutineEditButton";
+export { default as DashboardTotalSection } from "./DashboardParts/DashboardTotalSection";
+export { default as LineChart } from "./DashboardParts/LineChart";
