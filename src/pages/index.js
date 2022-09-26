@@ -1,4 +1,8 @@
-import { DashboardTotalSection, LineChart } from "../components";
+import {
+  DashboardTable,
+  DashboardTotalSection,
+  LineChart,
+} from "../components";
 
 const Home = () => {
   return (
@@ -22,6 +26,7 @@ const Home = () => {
       </div>
       <DashboardTotalSection />
       <LineChart />
+      <DashboardTable />
     </main>
   );
 };

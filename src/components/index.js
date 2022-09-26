@@ -8,3 +8,4 @@ export { default as FilterButtons } from "./FilterButtons/FilterButtons";
 export { default as RoutineEditButton } from "./RoutineEditButton/RoutineEditButton";
 export { default as DashboardTotalSection } from "./DashboardParts/DashboardTotalSection";
 export { default as LineChart } from "./DashboardParts/LineChart";
+export { default as DashboardTable } from "./DashboardParts/DashboardTable";
