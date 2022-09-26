@@ -13,6 +13,9 @@ module.exports = {
         "primary-text": "#0D1530CC",
         backdrop: "rgba(0, 0, 0, 0.6)",
       },
+      fontFamily: {
+        kalpurush: ["Kalpurush", "sans-serif"],
+      },
     },
     screens: {
       xs: "480px",
