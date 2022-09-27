@@ -1,8 +1,10 @@
 import {
+  DashboardRoutine,
   DashboardTable,
   DashboardTotalSection,
   LineChart,
 } from "../components";
+import Calendar from "react-calendar";
 
 const Home = () => {
   return (
@@ -25,8 +27,14 @@ const Home = () => {
         </div>
       </div>
       <DashboardTotalSection />
-      <LineChart />
-      <DashboardTable />
+      <div className='flex justify-between w-full gap-5 mt-10'>
+        <LineChart />
+        <DashboardRoutine />
+      </div>
+      <div className='mt-8 flex'>
+        <DashboardTable />
+        <div></div>
+      </div>
     </main>
   );
 };

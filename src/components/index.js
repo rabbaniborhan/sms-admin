@@ -9,3 +9,4 @@ export { default as RoutineEditButton } from "./RoutineEditButton/RoutineEditBut
 export { default as DashboardTotalSection } from "./DashboardParts/DashboardTotalSection";
 export { default as LineChart } from "./DashboardParts/LineChart";
 export { default as DashboardTable } from "./DashboardParts/DashboardTable";
+export { default as DashboardRoutine } from "./DashboardParts/DashboardRoutine";
