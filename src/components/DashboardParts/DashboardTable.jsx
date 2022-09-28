@@ -10,6 +10,9 @@ const DashboardTable = () => {
           <option className='border border-gray-400 p-1 rounded' value=''>
             Recent
           </option>
+          <option className='border border-gray-400 p-1 rounded' value=''>
+            Last Week
+          </option>
         </select>
       </div>
       <table className='w-full font-semibold font-kalpurush'>
