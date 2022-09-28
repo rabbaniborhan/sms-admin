@@ -5,8 +5,15 @@ import {
   LineChart,
 } from "../components";
 import Calendar from "react-calendar";
+import { useState } from "react";
 
 const Home = () => {
+  const [date, setDate] = useState(new Date());
+
+  const onChange = (date) => {
+    setDate(date);
+  };
+
   return (
     <main className='w-11/12 mx-auto pb-32'>
       <div>
@@ -31,9 +38,12 @@ const Home = () => {
         <LineChart />
         <DashboardRoutine />
       </div>
-      <div className='mt-8 flex'>
+      <div className='mt-8 flex gap-5'>
         <DashboardTable />
-        <div></div>
+        <div className='w-2/5 bg-white border border-gray-300 rounded-md'>
+          <span className='font-semibold pt-5 block px-6'>Event Calender</span>
+          <Calendar className='w-full' onChange={onChange} value={date} />
+        </div>
       </div>
     </main>
   );
