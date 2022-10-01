@@ -10,7 +10,7 @@ const Sidebar = () => {
   const router = useRouter();
 
   return (
-    <div className='pt-6 h-screen w-52 bg-sidebar text-center fixed left-0 top-0 z-20 overflow-hidden'>
+    <div className='pt-6 h-full w-52 bg-sidebar text-center absolute left-0 top-0 z-20 overflow-hidden'>
       {/* SMS Admin panel logo */}
       <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
@@ -391,6 +391,21 @@ const Sidebar = () => {
                 }`}>
                 <Link href='/institute-settings/classes-and-sections'>
                   Classes and Sections
+                </Link>
+              </span>
+            </li>
+
+            {/* Page customization submenu link */}
+            <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
+              {/* Dynimically changing the active link text color as per the path of the page via next router */}
+              <span
+                className={`ml-9 ${
+                  router.asPath === "/institute-settings/page-customization"
+                    ? "text-[#42DCCF]"
+                    : ""
+                }`}>
+                <Link href='/institute-settings/page-customization'>
+                  Page Customization
                 </Link>
               </span>
             </li>

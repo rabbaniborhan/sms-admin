@@ -1,6 +1,5 @@
 import logo from "./logo.svg";
 import studentPng from "./student.png";
-import blackboardSvg from "./blackboard (2).svg";
 import yellowCircle from "./yellow-circle.svg";
 import moneyPng from "./money.png";
 import principal from "./principal.png";
@@ -23,11 +22,20 @@ import teacher5 from "./teacher5.png";
 import settingsIcon from "./settings.svg";
 import accessImage from "./accessImage.png";
 import documentIcon from "./document.svg";
+import headerImage from "./lady.png";
+import playStore from "./playstore.png";
+import infoImage1 from "./info-img-1.png";
+import infoImage2 from "./info-img-2.png";
+import chairSvg from "./chair.svg";
+import studentPngWhite from "./student-white.png";
+import teacherSvg from "./teacher.svg";
+import blackboardSvg from "./Blackboard (1).svg";
+import studentHoldingBooks from "./female-student-holding-her-books.png";
 
 const images = {
   logo,
   studentPng,
-  blackboardSvg,
+
   yellowCircle,
   moneyPng,
   principal,
@@ -50,6 +58,15 @@ const images = {
   settingsIcon,
   accessImage,
   documentIcon,
+  headerImage,
+  playStore,
+  infoImage1,
+  infoImage2,
+  chairSvg,
+  teacherSvg,
+  studentPngWhite,
+  blackboardSvg,
+  studentHoldingBooks,
 };
 
 export default images;

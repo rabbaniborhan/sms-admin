@@ -10,3 +10,9 @@ export { default as DashboardTotalSection } from "./DashboardParts/DashboardTota
 export { default as LineChart } from "./DashboardParts/LineChart";
 export { default as DashboardTable } from "./DashboardParts/DashboardTable";
 export { default as DashboardRoutine } from "./DashboardParts/DashboardRoutine";
+export { default as Banner } from "./Banner/Banner";
+export { default as LatestNews } from "./LatestNews/LatestNews";
+export { default as StatisticsSection } from "./StatisticsSection/StatisticsSection";
+// export { default as PrincipalSection } from "./PrincipalSection/PrincipalSection";
+export { default as InfoSection } from "./InfoSection/InfoSection";
+export { default as Table } from "./Table/Table";
