@@ -3,15 +3,20 @@ import {
   BsListUl,
   BsFillBellFill,
   BsThreeDotsVertical,
+  BsInstagram,
+  BsTwitter,
+  BsYoutube,
+  BsFillTelephoneFill,
 } from "react-icons/bs";
-import { HiOutlineViewGrid } from "react-icons/hi";
-import { AiOutlineEye } from "react-icons/ai";
+import { HiOutlineViewGrid, HiOutlineCamera } from "react-icons/hi";
+import { AiOutlineEye, AiFillFacebook } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import {
   MdEdit,
   MdOutlineAddCircleOutline,
   MdDelete,
-  MdKeyboardArrowRight,
+  MdOutlineKeyboardArrowRight,
+  MdOutlineKeyboardArrowDown,
 } from "react-icons/md";
 import { FaTimes, FaRegTimesCircle } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
@@ -57,7 +62,7 @@ export const Delete = ({ className }) => {
 };
 
 export const ArrowRight = ({ className }) => {
-  return <MdKeyboardArrowRight className={className} />;
+  return <MdOutlineKeyboardArrowRight className={className} />;
 };
 
 export const ThreeDots = ({ className }) => {
@@ -70,4 +75,32 @@ export const Edit = ({ className }) => {
 
 export const RoundCross = ({ className }) => {
   return <FaRegTimesCircle className={className} />;
+};
+
+export const ArrowDown = ({ className }) => {
+  return <MdOutlineKeyboardArrowDown className={className} />;
+};
+
+export const FacebookSquare = ({ className }) => {
+  return <AiFillFacebook className={className} />;
+};
+
+export const Instagram = ({ className }) => {
+  return <BsInstagram className={className} />;
+};
+
+export const Twitter = ({ className }) => {
+  return <BsTwitter className={className} />;
+};
+
+export const Youtube = ({ className }) => {
+  return <BsYoutube className={className} />;
+};
+
+export const Telephone = ({ className }) => {
+  return <BsFillTelephoneFill className={className} />;
+};
+
+export const Camera = ({ className }) => {
+  return <HiOutlineCamera className={className} />;
 };

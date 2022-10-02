@@ -5,7 +5,7 @@ import { Bell, Search } from "../../constants/icons";
 
 const Navbar = () => {
   return (
-    <div className='h-16 w-full flex justify-around items-center bg-[#1EB3A6] overflow-hidden py-3 fixed z-10'>
+    <div className='h-16 w-full flex justify-around items-center bg-[#1EB3A6] overflow-hidden py-3 absolute z-10'>
       <div className='flex justify-center items-center gap-3'>
         <Image
           src={images.principal}
