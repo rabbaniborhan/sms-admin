@@ -1,45 +1,40 @@
 import { useRouter } from "next/router";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import {
   Banner,
-  InfoSection,
-  Table,
-  StatisticsSection,
-  PrincipalSection,
-  LatestNews,
   Footer,
+  InfoSection,
+  PrincipalSection,
+  StatisticsSection,
 } from "../../../../components";
 import { ShowContext } from "../../../_app";
 
-const Home = () => {
+const AboutUs = () => {
   const [show, setShow] = useContext(ShowContext);
   const router = useRouter();
   if (router.asPath.includes("/edit-page")) {
     setShow(false);
   }
+
   return (
     <div>
       <Banner
         /* Sending different values for showing alternative text and hiding the button from the banner */
         path={{
-          btn: true,
+          btn: false,
+          imageAlter: false,
+          heightAlter: true,
+          paddingAlter: true,
         }}
         navPath={true}
         subPath={true}
       />
-
-      <LatestNews />
-      <Table />
       <InfoSection />
       <StatisticsSection />
       <PrincipalSection />
       <Footer />
-
-      <button className='py-3 px-12 text-white font-semibold rounded fixed right-5 bottom-5 bg-yellow z-50'>
-        Save
-      </button>
     </div>
   );
 };
 
-export default Home;
+export default AboutUs;

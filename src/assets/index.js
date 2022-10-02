@@ -31,6 +31,7 @@ import studentPngWhite from "./student-white.png";
 import teacherSvg from "./teacher.svg";
 import blackboardSvg from "./Blackboard (1).svg";
 import studentHoldingBooks from "./female-student-holding-her-books.png";
+import womenPrincipal from "./woman-using-tablet 1.png";
 
 const images = {
   logo,
@@ -67,6 +68,7 @@ const images = {
   studentPngWhite,
   blackboardSvg,
   studentHoldingBooks,
+  womenPrincipal,
 };
 
 export default images;

@@ -16,7 +16,9 @@ const EditPagesMenu = () => {
         </a>
       </li>
       <li className='hover:text-primary transition-all'>
-        <a href='/'>
+        <a
+          href='/institute-settings/page-customization/edit-page/about-us'
+          target='_blank'>
           <span className='flex justify-start items-center gap-10 cursor-pointer group'>
             <p>2. About Us</p>
             <Edit className='invisible group-hover:visible' />
@@ -24,7 +26,9 @@ const EditPagesMenu = () => {
         </a>
       </li>
       <li className='hover:text-primary transition-all'>
-        <a href='/'>
+        <a
+          href='/institute-settings/page-customization/edit-page/contact'
+          target='_blank'>
           <span className='flex justify-start items-center gap-10 cursor-pointer group'>
             <p>3. Contact</p>
             <Edit className='invisible group-hover:visible' />
@@ -32,7 +36,7 @@ const EditPagesMenu = () => {
         </a>
       </li>
       <li className='hover:text-primary transition-all'>
-        <a href='/'>
+        <a href='/' target='_blank'>
           <span className='flex justify-start items-center gap-10 cursor-pointer group'>
             <p>1. Footer</p>
             <Edit className='invisible group-hover:visible' />
