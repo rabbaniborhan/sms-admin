@@ -9,7 +9,12 @@ import {
   BsFillTelephoneFill,
 } from "react-icons/bs";
 import { HiOutlineViewGrid, HiOutlineCamera } from "react-icons/hi";
-import { AiOutlineEye, AiFillFacebook } from "react-icons/ai";
+import {
+  AiOutlineEye,
+  AiFillFacebook,
+  AiFillClockCircle,
+  AiFillLinkedin,
+} from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import {
   MdEdit,
@@ -17,6 +22,7 @@ import {
   MdDelete,
   MdOutlineKeyboardArrowRight,
   MdOutlineKeyboardArrowDown,
+  MdEmail,
 } from "react-icons/md";
 import { FaTimes, FaRegTimesCircle } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
@@ -103,4 +109,16 @@ export const Telephone = ({ className }) => {
 
 export const Camera = ({ className }) => {
   return <HiOutlineCamera className={className} />;
+};
+
+export const Email = ({ className }) => {
+  return <MdEmail className={className} />;
+};
+
+export const Clock = ({ className }) => {
+  return <AiFillClockCircle className={className} />;
+};
+
+export const Linkedin = ({ className }) => {
+  return <AiFillLinkedin className={className} />;
 };
