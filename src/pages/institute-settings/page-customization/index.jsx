@@ -23,11 +23,11 @@ const PageCustomizationPage = () => {
         </div>
       </div>
 
-      <div className='flex'>
+      <div className='flex justify-between gap-5'>
         <EditPagesMenu />
-        <iframe src='https://sms.makereal.click' className='w-4/5 h-[768px]'>
-          Here
-        </iframe>
+        <div id='wrap border'>
+          <iframe src='https://sms.makereal.click' id='scaled-frame'></iframe>
+        </div>
       </div>
     </div>
   );
