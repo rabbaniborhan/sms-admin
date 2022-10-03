@@ -18,3 +18,4 @@ export { default as InfoSection } from "./InfoSection/InfoSection";
 export { default as Table } from "./Table/Table";
 export { default as Footer } from "./Footer/Footer";
 export { default as Maps } from "./Maps/Maps";
+export { default as LayoutSecond } from "./LayoutSecond/LayoutSecond";
