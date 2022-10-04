@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { useState } from "react";
 import images from "../../assets";
 import {
   Clock,
@@ -17,6 +18,7 @@ import {
 
 const Footer = () => {
   const router = useRouter();
+  const [showInput, setShowInput] = useState("");
 
   return (
     <div>
@@ -40,83 +42,191 @@ const Footer = () => {
           <div className='flex flex-col gap-3'>
             <h3 className='text-xl font-bold'>What We Do</h3>
             <div className='flex flex-col justify-start items-start gap-3 text-sm'>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              {showInput === 1 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(1)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Courses</Link>
                 </span>
-                <Link href='#'>Courses</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 2 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(2)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Products</Link>
                 </span>
-                <Link href='#'>Products</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 3 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(3)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Projects</Link>
                 </span>
-                <Link href='#'>Projects</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 4 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(4)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Services</Link>
                 </span>
-                <Link href='#'>Services</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 5 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(5)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Laboratory</Link>
                 </span>
-                <Link href='#'>Laboratory</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 6 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(6)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Research</Link>
                 </span>
-                <Link href='#'>Research</Link>
-              </span>
+              )}
             </div>
           </div>
           <div className='flex flex-col gap-3'>
             <h3 className='text-xl font-bold'>Our Institute</h3>
             <div className='flex flex-col justify-start items-start gap-3 text-sm'>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              {showInput === 7 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(7)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Home</Link>
                 </span>
-                <Link href='#'>Home</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 8 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(8)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>About Us</Link>
                 </span>
-                <Link href='#'>About Us</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 9 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(9)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Notice Board</Link>
                 </span>
-                <Link href='#'>Notice Board</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 10 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(10)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Institution</Link>
                 </span>
-                <Link href='#'>Institution</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 11 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(11)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Student</Link>
                 </span>
-                <Link href='#'>Student</Link>
-              </span>
-              <span className='flex justify-start items-center gap-3'>
-                <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
-                  <Edit className='text-primary w-4 h-4' />
+              )}
+              {showInput === 12 ? (
+                <input
+                  type='text'
+                  className='border border-gray-300 bg-transparent outline-none'
+                />
+              ) : (
+                <span className='flex justify-start items-center gap-3'>
+                  <span className='bg-white w-6 h-6 rounded-full shadow-md  flex justify-center items-center cursor-pointer border border-gray-300'>
+                    <button onClick={() => setShowInput(12)}>
+                      <Edit className='text-primary w-4 h-4' />
+                    </button>
+                  </span>
+                  <Link href='#'>Teacher</Link>
                 </span>
-                <Link href='#'>Teacher</Link>
-              </span>
+              )}
             </div>
           </div>
           <div className='flex flex-col gap-3 -mt-[3rem]'>
