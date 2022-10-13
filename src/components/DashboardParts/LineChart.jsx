@@ -87,7 +87,7 @@ export const data = {
 
 const LineChart = () => {
   return (
-    <div className='w-3/5 bg-white border border-gray-300 py-5 px-5 rounded-md'>
+    <div className='w-3/5 bg-white shadow-md py-5 px-5 rounded-md'>
       <div>
         <div>
           <h3 className='font-semibold text-xl'>Earnings</h3>

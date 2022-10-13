@@ -9,8 +9,10 @@ function AdmissionFormSelector({ data }) {
     <div>
       <Listbox value={selected} onChange={setSelected}>
         <div className='relative mt-1'>
-          <Listbox.Button className='relative cursor-default px-5 py-2 w-[600px]  rounded ring-2 ring-gray-400 outline-none text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
-            <span className='block truncate'>{selected.name}</span>
+          <Listbox.Button className='relative cursor-default px-5 py-2.5 w-[600px]  rounded ring-1 ring-gray-400 outline-none text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
+            <span className='block truncate text-xs font-semibold'>
+              {selected.name}
+            </span>
             <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <SelectorIcon
                 className='h-5 w-5 text-gray-400'
