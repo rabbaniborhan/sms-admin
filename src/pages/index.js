@@ -6,6 +6,7 @@ import {
 } from "../components";
 import Calendar from "react-calendar";
 import { useState } from "react";
+import DashboardCalender from "../components/DashboardParts/DashboardCalender";
 
 const Home = () => {
   const [date, setDate] = useState(new Date());
@@ -40,9 +41,9 @@ const Home = () => {
       </div>
       <div className='mt-8 flex gap-5'>
         <DashboardTable />
-        <div className='w-2/5 bg-white border border-gray-300 rounded-md'>
+        <div className='w-2/5 bg-white shadow-md rounded-md overflow-hidden'>
           <span className='font-semibold pt-5 block px-6'>Event Calender</span>
-          <Calendar className='w-full' onChange={onChange} value={date} />
+          <DashboardCalender />
         </div>
       </div>
     </main>

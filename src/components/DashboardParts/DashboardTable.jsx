@@ -3,7 +3,7 @@ import noticeData from "../../constants/tableData/noticeData";
 
 const DashboardTable = () => {
   return (
-    <div className='w-3/5 bg-white border border-gray-300 rounded-md'>
+    <div className='w-3/5 bg-white shadow-md rounded-md'>
       <div className='flex justify-between items-center w-full py-4 px-6'>
         <h4 className='font-semibold'>Notice Board</h4>
         <select className='border border-gray-400 p-1 rounded'>

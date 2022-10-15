@@ -19,27 +19,27 @@ const TableData = ({ tableData }) => {
     <tbody>
       {tableData.map((item, i) => (
         <tr key={i} className={`${i % 2 === 0 ? "bg-[#1EB3A61A]" : ""}`}>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.name}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.applicationId}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.class}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.contact}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.session}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.method}
           </td>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             <span
-              className={`py-3 w-full block text-xs font-semibold rounded text-white ${
+              className={`py-3 w-24 mx-auto block text-xs font-semibold rounded text-white ${
                 item.payment === "PAID" ? "bg-primary" : "bg-yellow"
               }`}>
               {item.payment}

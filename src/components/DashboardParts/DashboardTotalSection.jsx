@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const DashboardTotalSection = () => {
   return (
-    <div className='w-full mx-auto flex justify-between items-center'>
-      <div className='w-80 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
+    <div className='w-full mx-auto flex justify-between gap-16 items-center'>
+      <div className='w-1/3 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>
@@ -28,7 +28,7 @@ const DashboardTotalSection = () => {
         </div>
       </div>
 
-      <div className='w-80 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
+      <div className='w-1/3 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>
@@ -51,7 +51,7 @@ const DashboardTotalSection = () => {
         </div>
       </div>
 
-      <div className='w-80 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
+      <div className='w-1/3 relative overflow-hidden flex justify-start items-start gap-5 p-3 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>

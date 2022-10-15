@@ -8,13 +8,13 @@ const ApplicationSearchForm = () => {
         <div className='flex justify-center items-center gap-10 w-full'>
           <input
             type='text'
-            className='py-3 px-1 border border-[#0D153026] rounded-sm shadow-sm w-80 outline-none'
+            className='py-3 px-3 border border-[#0D153026] rounded-sm shadow-sm w-80 outline-none'
             placeholder='Name'
           />
 
           <input
             type='text'
-            className='py-3 px-1 border border-[#0D153026] rounded-sm shadow-sm w-80 outline-none'
+            className='py-3 px-3 border border-[#0D153026] rounded-sm shadow-sm w-80 outline-none'
             placeholder='Application ID'
           />
           <ApplicationSearchFormSelector />
