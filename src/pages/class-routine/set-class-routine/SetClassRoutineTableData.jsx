@@ -4,15 +4,15 @@ import { classRoutineData } from "../../../constants/routineData";
 
 const SetClassRoutineTableData = ({ day, setShowModal }) => {
   return (
-    <tr className='text-center'>
-      <td className='py-4 px-3 font-semibold text-2xl border-[0.5px] border-gray-400'>
+    <tr className="text-center">
+      <td className="py-4 px-3 font-semibold text-lg border-[0.5px] border-gray-400">
         {day}
       </td>
 
       {classRoutineData?.map((item, i) => (
-        <td className='py-4 px-3 border-[0.5px] border-gray-400' key={i}>
+        <td className="py-4 px-3 border-[0.5px] border-gray-400" key={i}>
           <button onClick={() => setShowModal(true)}>
-            <Add className='text-3xl cursor-pointer' />
+            <Add className="text-3xl cursor-pointer" />
           </button>
         </td>
       ))}
