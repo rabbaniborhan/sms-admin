@@ -7,51 +7,51 @@ const StudentInfoAddFormInputs = () => {
       <StudentInfoAddFormSelector />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter J.S.C Roll No'
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Registration No'
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's name"
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Father’s name"
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Mother’s name"
       />
 
       <div className='flex justify-between items-center gap-2 w-[600px]'>
         <input
           type='text'
-          className='px-5 xl:py-2 lg:py-1.5 w-1/3 rounded ring-1 ring-gray-400 outline-none'
+          className='px-5 xl:py-2 lg:py-1.5 w-1/3 rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder='Date'
         />
         <input
           type='text'
-          className='px-5 xl:py-2 lg:py-1.5 w-1/3 rounded ring-1 ring-gray-400 outline-none'
+          className='px-5 xl:py-2 lg:py-1.5 w-1/3 rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder='Month'
         />
         <input
           type='text'
-          className='px-5 xl:py-2 lg:py-1.5 w-1/3 rounded ring-1 ring-gray-400 outline-none'
+          className='px-5 xl:py-2 lg:py-1.5 w-1/3 rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder='Year'
         />
       </div>
 
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Entre Phone Number'
       />
 
@@ -59,7 +59,7 @@ const StudentInfoAddFormInputs = () => {
       <div className='flex justify-between items-center w-[600px]'>
         <input
           type='text'
-          className='px-5 xl:py-2 lg:py-1.5 w-[300px] rounded ring-1 ring-gray-400 outline-none'
+          className='px-5 xl:py-2 lg:py-1.5 w-[300px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder="Enter Applicant's Religion"
         />
         <div className='flex justify-center items-center gap-6 w-[300px]'>
@@ -88,7 +88,7 @@ const StudentInfoAddFormInputs = () => {
       <div className='flex justify-center items-center gap-5 mt-1.5'>
         <input
           type='text'
-          className='px-5 xl:py-2 lg:py-1.5 w-[230px] rounded ring-1 ring-gray-400 outline-none'
+          className='px-5 xl:py-2 lg:py-1.5 w-[230px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder="Enter Applicant's Blood Group"
         />
 
@@ -97,40 +97,40 @@ const StudentInfoAddFormInputs = () => {
         </label>
         <input
           type='text'
-          className='px-5 xl:py-2 lg:py-1.5 w-[230px] rounded ring-1 ring-gray-400 outline-none'
+          className='px-5 xl:py-2 lg:py-1.5 w-[230px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder="Enter Applicant's Nationality"
         />
       </div>
 
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Present Address'
       />
 
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Permanent Address'
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Passing Year"
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Result/GPA"
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Institution Name'
       />
       <input
         type='text'
-        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none'
+        className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Board Name'
       />
       <label

@@ -50,7 +50,7 @@ const ManualPromotionForm = ({ setShowModal }) => {
               <ManualPromotionFormSelector />
               <input
                 type='text'
-                className='w-[213px] border border-gray-500 outline-none px-2 py-[5px] rounded-sm'
+                className='w-[213px] border border-gray-400 outline-none px-2 py-[5px] rounded'
               />
             </div>
           </div>

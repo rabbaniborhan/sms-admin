@@ -5,7 +5,6 @@ import AllMarksheetTableData from "./AllMarksheetTableData";
 const AllMarksheetTable = () => {
   return (
     <div className='my-20'>
-      <p className='font-semibold my-5'>20 Result</p>
       <table className='w-full border-[0.5px] border-gray-500 relative bg-white text-center'>
         <thead>
           <tr className='text-lg'>
@@ -23,6 +22,7 @@ const AllMarksheetTable = () => {
           ))}
         </tbody>
       </table>
+      <p className='font-semibold my-5'>20 Result</p>
     </div>
   );
 };

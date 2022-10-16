@@ -4,8 +4,8 @@ import images from "../../../../assets";
 
 const PaymentTotalSection = () => {
   return (
-    <div className='w-full mx-auto flex justify-between items-center'>
-      <div className='w-70 relative overflow-hidden flex justify-start items-start gap-5 px-3 py-6 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
+    <div className='w-full mx-auto flex justify-between items-center gap-16'>
+      <div className='w-1/2  relative overflow-hidden flex justify-start items-start gap-5 px-3 py-6 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -left-3 -bottom-5'>
           <Image
             src={images.yellowCircle}
@@ -33,7 +33,7 @@ const PaymentTotalSection = () => {
         </div>
       </div>
 
-      <div className='w-70 relative overflow-hidden flex justify-start items-start gap-5 px-3 py-6 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
+      <div className='w-1/2  relative overflow-hidden flex justify-start items-start gap-5 px-3 py-6 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -left-3 -bottom-5'>
           <Image
             src={images.yellowCircle}
@@ -61,7 +61,7 @@ const PaymentTotalSection = () => {
         </div>
       </div>
 
-      <div className='w-70 relative overflow-hidden flex justify-start items-start gap-5 px-3 py-6 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
+      <div className='w-1/2  relative overflow-hidden flex justify-start items-start gap-5 px-3 py-6 bg-#fff shadow-md rounded-md ring-1 ring-[#0D153066]'>
         <span className='absolute -left-3 -bottom-5'>
           <Image
             src={images.yellowCircle}

@@ -6,7 +6,7 @@ import MarkDistributionSearchFormSelectorSession from "./MarkDistributionSearchF
 
 const MarkDistributionSearchForm = () => {
   return (
-    <div className='w-full mx-auto py-5 px-3 bg-white border border-[#0D153026]'>
+    <div className='w-full mx-auto py-5 px-3 bg-white border border-[#0D153026] rounded-2xl'>
       <form>
         <div className='flex justify-center items-center gap-5 w-full'>
           <MarkDistributionSearchFormSelectorClass />

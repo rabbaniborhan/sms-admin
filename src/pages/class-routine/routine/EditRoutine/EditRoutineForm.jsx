@@ -43,7 +43,7 @@ const EditRoutineForm = ({ setShowModal }) => {
             <SetClassRoutineSelector />
             <input
               type='text'
-              className='py-1 px-2 border border-[#0D153099] outline-none'
+              className='py-1 px-2 border border-gray-400 rounded outline-none'
             />
           </div>
         </div>

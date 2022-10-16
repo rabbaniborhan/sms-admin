@@ -7,13 +7,13 @@ const StudentAdmitCardSearchForm = () => {
         <div className='flex justify-center items-center gap-5'>
           <input
             type='text'
-            className='w-72 py-2.5 px-2 ring-1 ring-[#0D15304D] rounded-sm shadow-sm outline-none'
+            className='w-72 py-2 px-2 ring-1 ring-gray-300 rounded shadow-sm outline-none'
             placeholder='Name'
           />
           <input
             type='text'
-            className='w-72 py-2.5 px-2 ring-1 ring-[#0D15304D] rounded-sm shadow-sm outline-none'
-            placeholder='Name'
+            className='w-72 py-2 placeholder:text-sm px-2 ring-1 ring-gray-300 rounded shadow-sm outline-none'
+            placeholder='Roll'
           />
         </div>
         <div className='w-full px-6 text-right mt-8'>

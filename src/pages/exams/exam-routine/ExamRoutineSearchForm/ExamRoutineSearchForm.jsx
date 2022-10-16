@@ -3,7 +3,7 @@ import ExamRoutineSearchFormSelector from "./ExamRoutineSearchFormSelector";
 
 const ExamRoutineSearchForm = () => {
   return (
-    <div className='w-full mx-auto py-5 px-3 bg-white border border-[#0D153026]'>
+    <div className='w-full mx-auto py-5 px-3 bg-white border border-[#0D153026] rounded-2xl'>
       <form>
         <div className='flex justify-center items-center gap-10 w-full'>
           <ExamRoutineSearchFormSelector />
