@@ -8,18 +8,27 @@ import { useRouter } from "next/router";
 
 const Sidebar = () => {
   const router = useRouter();
+  const [showSubMenu, setShowSubMenu] = useState("");
 
   return (
     <div className='pt-6 h-full w-52 bg-sidebar text-center absolute left-0 top-0 z-20 overflow-hidden'>
       {/* SMS Admin panel logo */}
       <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
-          <Image src={images.logo} alt='sms_logo' width={100} height={40} />
+          <Image
+            src={images.logo}
+            alt='sms_logo'
+            width={100}
+            height={40}
+            onClick={() => setShowSubMenu("/")}
+          />
         </Link>
       </a>
       <ul className='text-md text-white text-left w-full font-[500]'>
         {/* Dashboard Link-Item */}
-        <li className='w-full'>
+        <li
+          className='w-full cursor-pointer'
+          onClick={() => setShowSubMenu("dashboard")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-10 ${
               router.asPath === "/" ? "bg-[#1EB3A6]" : ""
@@ -29,7 +38,9 @@ const Sidebar = () => {
           </span>
         </li>
         {/* Admission Link-Item */}
-        <li className='w-full relative group'>
+        <li
+          className='w-full relative'
+          onClick={() => setShowSubMenu("admission")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-10 cursor-pointer ${
               router.asPath.includes("/admission") ? "bg-[#1EB3A6]" : ""
@@ -40,7 +51,9 @@ const Sidebar = () => {
 
           {/* Admission Submenu */}
           <ul
-            className={`text-xs w-full text-left font-[500] hidden group-hover:block`}>
+            className={`text-xs w-full text-left font-[500] ${
+              showSubMenu === "admission" ? "block" : "hidden"
+            }`}>
             {/* Add new admission submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
@@ -97,7 +110,7 @@ const Sidebar = () => {
           </ul>
         </li>
         {/* Class-Routine Link Item */}
-        <li className='w-full'>
+        <li className='w-full' onClick={() => setShowSubMenu("class-routine")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-4 ${
               router.asPath.includes("/class-routine") ? "bg-[#1EB3A6]" : ""
@@ -106,8 +119,11 @@ const Sidebar = () => {
             <Link href='/class-routine'>Class Routine</Link>
           </span>
         </li>
+
         {/* Exam-Routine Link Item */}
-        <li className='w-full group cursor-pointer'>
+        <li
+          className='w-full group cursor-pointer'
+          onClick={() => setShowSubMenu("exam-routine")}>
           <span
             className={`flex justify-center items-center gap-4 ${
               router.asPath.includes("/exams") ? "bg-[#1EB3A6]" : ""
@@ -122,7 +138,9 @@ const Sidebar = () => {
 
           {/* Exam-Routine Submenu */}
           <ul
-            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            className={`text-xs w-full flex-none text-left font-[500] ${
+              showSubMenu === "exam-routine" ? "block" : "hidden"
+            }`}>
             {/* Exam-Routine submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
@@ -161,8 +179,11 @@ const Sidebar = () => {
             </li>
           </ul>
         </li>
+
         {/* Results Link Item */}
-        <li className='w-full group cursor-pointer'>
+        <li
+          className='w-full group cursor-pointer'
+          onClick={() => setShowSubMenu("results")}>
           <span
             className={`flex justify-center items-center gap-4 ${
               router.asPath.includes("/results") ? "bg-[#1EB3A6]" : ""
@@ -177,7 +198,9 @@ const Sidebar = () => {
 
           {/* Results Submenu */}
           <ul
-            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            className={`text-xs w-full flex-none text-left font-[500] ${
+              showSubMenu === "results" ? "block" : "hidden"
+            }`}>
             {/* Generate Result submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
@@ -196,7 +219,9 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/results/marksheet" ? "text-[#42DCCF]" : ""
+                  router.asPath === "/results/create-marksheet"
+                    ? "text-[#42DCCF]"
+                    : ""
                 }`}>
                 <Link href='/results/create-marksheet'>Marksheet</Link>
               </span>
@@ -217,7 +242,9 @@ const Sidebar = () => {
           </ul>
         </li>
         {/* //Payment item link */}
-        <li className='w-full'>
+        <li
+          className='w-full cursor-pointer'
+          onClick={() => setShowSubMenu("payment")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-[50px] ${
               router.asPath.includes("/payment") ? "bg-[#1EB3A6]" : ""
@@ -228,7 +255,9 @@ const Sidebar = () => {
         </li>
 
         {/* Notice item link */}
-        <li className='w-full'>
+        <li
+          className='w-full cursor-pointer'
+          onClick={() => setShowSubMenu("notice")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-[68px] ${
               router.asPath.includes("/notice") ? "bg-[#1EB3A6]" : ""
@@ -239,7 +268,9 @@ const Sidebar = () => {
         </li>
 
         {/* Student Info item link */}
-        <li className='w-full group'>
+        <li
+          className='w-full cursor-pointer'
+          onClick={() => setShowSubMenu("student-info")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-[56px] cursor-pointer ${
               router.asPath.includes("/student") ? "bg-[#1EB3A6]" : ""
@@ -250,7 +281,9 @@ const Sidebar = () => {
 
           {/* Student info submenu */}
           <ul
-            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            className={`text-xs w-full flex-none text-left font-[500] ${
+              showSubMenu === "student-info" ? "block" : "hidden"
+            }`}>
             {/* Student information submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
@@ -282,7 +315,9 @@ const Sidebar = () => {
         </li>
 
         {/* Academic item link */}
-        <li className='w-full group'>
+        <li
+          className='w-full cursor-pointer'
+          onClick={() => setShowSubMenu("academic")}>
           <span
             className={`flex justify-center items-center gap-1 py-3 -ml-[43px] cursor-pointer ${
               router.asPath.includes("/academic") ? "bg-[#1EB3A6]" : ""
@@ -293,7 +328,9 @@ const Sidebar = () => {
 
           {/* Academic submenu */}
           <ul
-            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            className={`text-xs w-full flex-none text-left font-[500] ${
+              showSubMenu === "academic" ? "block" : "hidden"
+            }`}>
             {/* principal info submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
@@ -336,7 +373,9 @@ const Sidebar = () => {
         </li>
 
         {/* Institute-settings item link */}
-        <li className='w-full group'>
+        <li
+          className='w-full cursor-pointer'
+          onClick={() => setShowSubMenu("institute-settings")}>
           <span
             className={`flex justify-center items-center gap-1 py-3 -mr-[16px] cursor-pointer ${
               router.asPath.includes("/institute-settings")
@@ -349,7 +388,9 @@ const Sidebar = () => {
 
           {/* Institute-settings submenu */}
           <ul
-            className={`text-xs w-full flex-none text-left font-[500] hidden group-hover:block`}>
+            className={`text-xs w-full flex-none text-left font-[500] ${
+              showSubMenu === "institute-settings" ? "block" : "hidden"
+            }`}>
             {/* Manage-access submenu link */}
             <li className='border-b border-[#9E9E9E80] py-2 px-4 hover:text-[#42DCCF]'>
               {/* Dynimically changing the active link text color as per the path of the page via next router */}

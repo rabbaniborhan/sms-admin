@@ -5,8 +5,7 @@ import AllResultTableData from "./AllResultTableData";
 const AllResultTable = () => {
   return (
     <div className='my-20'>
-      <p className='font-semibold my-5'>20 Result</p>
-      <table className='w-full border-[0.5px] border-gray-500 relative bg-white text-center rounded overflow-hidden'>
+      <table className='w-full border-[0.5px] border-gray-500 relative bg-white text-center'>
         <thead>
           <tr className='text-lg'>
             <th className='border-[0.5px] border-gray-500 p-3'>Roll</th>
@@ -22,6 +21,7 @@ const AllResultTable = () => {
           ))}
         </tbody>
       </table>
+      <p className='font-semibold my-5'>20 Result</p>
     </div>
   );
 };

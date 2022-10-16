@@ -26,9 +26,7 @@ const AllResultPage = () => {
 
       <AllResultTotalSection />
       <AllResultSearchForm />
-      <div className='my-10'>
-        <hr className='pt-[0.5px] w-full bg-[#222222]' />
-      </div>
+
       <AllResultTable />
     </div>
   );

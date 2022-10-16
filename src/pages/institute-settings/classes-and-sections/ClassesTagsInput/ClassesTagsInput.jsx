@@ -19,9 +19,9 @@ const ClassesTagsInput = () => {
   };
 
   return (
-    <div className='w-full py-2.5 px-3 border border-gray-300 flex justify-center items-center gap-3'>
+    <div className='w-full py-2.5 rounded text-sm px-3 border border-gray-300 flex justify-center items-center gap-3'>
       {tags.map((item, i) => (
-        <span className='flex justify-center items-center shrink-0 gap-1 w-[10%] shadow-md border border-gray-300 rounded'>
+        <span className='flex justify-center items-center shrink-0 gap-1 w-auto px-1.5 shadow-md border border-gray-300 rounded'>
           {item}
           <button onClick={() => handleRemove(item)}>
             <RoundCross className='w-4 h-4 text-red-500' />

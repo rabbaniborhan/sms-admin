@@ -20,7 +20,7 @@ export default function SubjectSelector() {
     <div className='w-full'>
       <Listbox value={selected} onChange={setSelected}>
         <div className='relative mt-1'>
-          <Listbox.Button className='relative cursor-default bg-white pl-3 pr-10 text-left py-[13.5px] -mt-1 px-1 border border-[#0D153026] rounded-sm shadow-sm w-full focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm z-10'>
+          <Listbox.Button className='relative cursor-default bg-white pl-3 pr-10 text-left py-[9.5px] -mt-1 px-1 border border-gray-300 rounded shadow-sm w-full focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm z-10'>
             <span className='flex justify-start items-start gap-3'>
               <Image src={images.documentIcon} />
               {selected.name}

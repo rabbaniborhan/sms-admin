@@ -39,12 +39,12 @@ const AddNewSubjectPage = () => {
             <input
               type='text'
               placeholder='New Subject Name'
-              className='py-[10px] px-3 w-full border border-gray-300'
+              className='py-2 placeholder:text-sm px-3 w-full border border-gray-300 rounded'
             />
             <input
               type='text'
               placeholder='New Subject Code'
-              className='py-[10px] px-3 w-full border border-gray-300'
+              className='py-2 placeholder:text-sm px-3 w-full border border-gray-300 rounded'
             />
           </div>
         ) : (
@@ -53,12 +53,12 @@ const AddNewSubjectPage = () => {
             <input
               type='text'
               placeholder='New Optional Subject Name'
-              className='py-[10px] px-3 w-full border border-gray-300'
+              className='py-2 rounded placeholder:text-sm px-3 w-full border border-gray-300'
             />
             <input
               type='text'
               placeholder='New optional Subject Code'
-              className='py-[10px] px-3 w-full border border-gray-300'
+              className='py-2 rounded placeholder:text-sm px-3 w-full border border-gray-300'
             />
           </div>
         )}
