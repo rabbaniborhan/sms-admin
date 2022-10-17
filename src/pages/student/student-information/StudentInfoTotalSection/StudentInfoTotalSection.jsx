@@ -10,9 +10,14 @@ const StudentInfoTotalSection = () => {
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>
-        <div className='text-center w-full space-y-2'>
-          <h4 className='text-3xl font-semibold text-[#1EB3A6]'>10670</h4>
-          <p className='text-xl font-semibold'>Total Student</p>
+        <div className='flex justify-start gap-10 items-center'>
+          <span className='w-20 h-20 flex justify-center items-center rounded-full bg-primary/30'>
+            <Image src={images.studentPng} />
+          </span>
+          <div className='text-left space-y-2'>
+            <h4 className='text-3xl font-semibold text-[#1EB3A6]'>10670</h4>
+            <p className='text-xl font-semibold'>Total Student</p>
+          </div>
         </div>
       </div>
 
@@ -21,9 +26,14 @@ const StudentInfoTotalSection = () => {
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>
-        <div className='text-center w-full space-y-2'>
-          <h4 className='text-3xl font-semibold text-[#1EB3A6]'>6670</h4>
-          <p className='text-xl font-semibold'>Total Student</p>
+        <div className='flex justify-start gap-10 items-center'>
+          <span className='w-20 h-20 flex justify-center items-center rounded-full bg-primary/30'>
+            <Image src={images.studentPng} />
+          </span>
+          <div className='text-left space-y-2'>
+            <h4 className='text-3xl font-semibold text-[#1EB3A6]'>6670</h4>
+            <p className='text-xl font-semibold'>Girls</p>
+          </div>
         </div>
       </div>
 
@@ -32,9 +42,14 @@ const StudentInfoTotalSection = () => {
         <span className='absolute -right-2 -top-3'>
           <Image src={images.yellowCircle} alt='yellow_circle' />
         </span>
-        <div className='text-center w-full space-y-2'>
-          <h4 className='text-3xl font-semibold text-[#1EB3A6]'>4000</h4>
-          <p className='text-xl font-semibold'>Boys</p>
+        <div className='flex justify-start gap-10 items-center'>
+          <span className='w-20 h-20 flex justify-center items-center rounded-full bg-primary/30'>
+            <Image src={images.studentPng} />
+          </span>
+          <div className='text-left space-y-2'>
+            <h4 className='text-3xl font-semibold text-[#1EB3A6]'>4000</h4>
+            <p className='text-xl font-semibold'>Boys</p>
+          </div>
         </div>
       </div>
     </div>

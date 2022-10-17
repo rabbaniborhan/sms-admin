@@ -3,7 +3,7 @@ import StudentPromotionSearchFormSelector from "./StudentPromotionSearchFormSele
 
 const StudentPromotionSearchForm = () => {
   return (
-    <div className='w-full mx-auto py-5 px-3 mt-12 bg-white border border-[#0D153026]'>
+    <div className='w-full mx-auto py-5 px-3 mt-12 bg-white border border-[#0D153026] rounded-2xl'>
       <form>
         <div className='flex justify-center items-center gap-10 w-full'>
           <StudentPromotionSearchFormSelector />

@@ -8,14 +8,14 @@ const MarkDistributionForm = () => {
         {/* Schedule form */}
         <form className='px-8 py-8'>
           <div className='flex justify-center items-center gap-8'>
-            <div className='flex flex-col justify-start items-start gap-[38px]'>
+            <div className='flex flex-col justify-start items-start gap-[38px] font-semibold'>
               <label htmlFor=''>Exam Name</label>
               <label htmlFor=''>Class</label>
               <label htmlFor=''>Subject</label>
               <label htmlFor=''>Session</label>
             </div>
 
-            <div className='flex flex-col justify-center items-center gap-[38px]'>
+            <div className='flex flex-col justify-center items-center gap-[38px] font-semibold'>
               <p>:</p>
               <p>:</p>
               <p>:</p>
