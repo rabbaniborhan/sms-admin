@@ -4,7 +4,7 @@ import { dashboardRoutineData } from "../../constants/tableData/dashboardRoutine
 
 const DashboardRoutine = () => {
   return (
-    <div className='w-2/5 bg-white border shadow-md rounded-md'>
+    <div className='w-2/5 shadow-md border rounded-md'>
       <div className='flex justify-between items-center py-5 px-4'>
         <h3 className='font-semibold'>Class Routine</h3>
         <select className='border border-gray-400 rounded p-0.5 relative'>
@@ -28,7 +28,7 @@ const DashboardRoutine = () => {
           </option>
         </select>
       </div>
-      <table className='rounded-md'>
+      <table className='rounded-md bg-white'>
         <thead>
           <tr>
             <th className='text-xs border-[0.5px] border-gray-400'></th>

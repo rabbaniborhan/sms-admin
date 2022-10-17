@@ -26,12 +26,12 @@ const ClassRoutine = () => {
         <table className='w-full my-10 z-1'>
           <thead>
             <tr>
-              <th className='text-2xl border-[0.5px] border-gray-400 py-2 px-10'>
+              <th className='text-xl border-[0.5px] border-gray-400 py-2 px-10'>
                 Day
               </th>
               {classRoutineData?.map((item, i) => (
                 <th
-                  className='border-[0.5px] border-gray-400 py-2 px-3'
+                  className='border-[0.5px] text-sm border-gray-400 py-2 px-3'
                   key={i}>
                   {item.time}
                 </th>

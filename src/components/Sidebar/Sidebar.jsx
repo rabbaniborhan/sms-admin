@@ -11,7 +11,7 @@ const Sidebar = () => {
   const [showSubMenu, setShowSubMenu] = useState("");
 
   return (
-    <div className='pt-6 h-full w-52 bg-sidebar text-center absolute left-0 top-0 z-20 overflow-hidden'>
+    <div className='pt-6 h-full w-52 bg-sidebar text-center fixed left-0 top-0 z-20 overflow-hidden'>
       {/* SMS Admin panel logo */}
       <a className='mb-8 -ml-4 block cursor-pointer'>
         <Link href='/'>
@@ -59,7 +59,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/admission/new-admission"
+                  router.asPath.includes("/admission/new-admission")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -72,7 +72,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/admission/admission-payment"
+                  router.asPath.includes("/admission/admission-payment")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -146,7 +146,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/exams/exam-routine"
+                  router.asPath.includes("/exams/exam-routine")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -159,7 +159,9 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/exams/admit-card" ? "text-[#42DCCF]" : ""
+                  router.asPath.includes("/exams/admit-card")
+                    ? "text-[#42DCCF]"
+                    : ""
                 }`}>
                 <Link href='/exams/admit-card'>Admit card</Link>
               </span>
@@ -170,7 +172,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/exams/mark-distribution"
+                  router.asPath.includes("/exams/mark-distribution")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -206,7 +208,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/results/generate-result"
+                  router.asPath.includes("/results/generate-result")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -219,7 +221,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/results/create-marksheet"
+                  router.asPath.includes("/results/create-marksheet")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -232,7 +234,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/results/student-promotion"
+                  router.asPath.includes("/results/student-promotion")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -273,7 +275,7 @@ const Sidebar = () => {
           onClick={() => setShowSubMenu("student-info")}>
           <span
             className={`flex justify-center items-center gap-2 py-3 -ml-[56px] cursor-pointer ${
-              router.asPath.includes("/student") ? "bg-[#1EB3A6]" : ""
+              router.asPath.includes("/student/") ? "bg-[#1EB3A6]" : ""
             }`}>
             <Peoples className='w-[18px] h-[18px] -mt-[2.5px]' />
             <span>Student</span>
@@ -289,7 +291,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/student/student-information"
+                  router.asPath.includes("/student/student-information")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -304,7 +306,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/student/assign-subject"
+                  router.asPath.includes("/student/assign-subject")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -336,7 +338,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/academic/principal-info"
+                  router.asPath.includes("/academic/principal-info")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -349,7 +351,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/academic/teachers-info"
+                  router.asPath.includes("/academic/teachers-info")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
@@ -362,7 +364,7 @@ const Sidebar = () => {
               {/* Dynimically changing the active link text color as per the path of the page via next router */}
               <span
                 className={`ml-9 ${
-                  router.asPath === "/academic/staff-info"
+                  router.asPath.includes("/academic/staff-info")
                     ? "text-[#42DCCF]"
                     : ""
                 }`}>
