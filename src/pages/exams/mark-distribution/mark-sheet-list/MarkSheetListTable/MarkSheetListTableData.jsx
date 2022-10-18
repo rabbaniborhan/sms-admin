@@ -1,5 +1,6 @@
 import React from "react";
-import { ThreeDots, Pencil } from "../../../../../constants/icons";
+import { useState } from "react";
+import { Edit, ThreeDots } from "../../../../../constants/icons";
 
 const MarkSheetListTableData = ({ reportData }) => {
   return (
@@ -13,25 +14,11 @@ const MarkSheetListTableData = ({ reportData }) => {
       <td className='border-[0.5px] border-gray-500 py-4'>
         {reportData?.subject}
       </td>
-      <td className='border-[0.5px] border-gray-500 py-4 group relative'>
-        <div className='bg-[#0D15300D]/10 backdrop-blur-sm py-3.5 px-[52px] absolute top-0 left-0 hidden group-hover:block'>
-          <button
-            className='flex justify-center items-center text-primary font-bold text-lg'
-            onClick={() => setShowSubjectModal(true)}>
-            Edit <Pencil />
-          </button>
-        </div>
-        {reportData?.mcq}
+      <td className='border-[0.5px] border-gray-500 group'>
+        <input type='text' className='w-full py-4 text-center' />
       </td>
-      <td className='border-[0.5px] border-gray-500 py-4 group relative'>
-        <div className='bg-[#0D15300D]/10 backdrop-blur-sm py-3.5 px-[52px] absolute top-0 left-0 hidden group-hover:block'>
-          <button
-            className='flex justify-center items-center text-primary font-bold text-lg'
-            onClick={() => setShowSubjectModal(true)}>
-            Edit <Pencil />
-          </button>
-        </div>
-        {reportData?.cq}
+      <td className='border-[0.5px] border-gray-500 group'>
+        <input type='text' className='w-full py-4 text-center' />
       </td>
       <td className='border-[0.5px] border-gray-500 py-4'></td>
       <td colSpan={3} className='border-[0.5px] border-gray-500 py-4'>
