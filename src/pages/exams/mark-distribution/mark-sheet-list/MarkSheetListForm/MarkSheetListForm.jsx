@@ -2,7 +2,7 @@ import React from "react";
 
 const MarkSheetListForm = () => {
   return (
-    <div className='w-3/4 mx-auto py-5 px-3 mb-16 bg-white border border-[#0D153026]'>
+    <div className='w-3/4 mx-auto py-5 px-3 mb-16 bg-white border border-[#0D153026] rounded-2xl'>
       <form>
         <div className='flex justify-center items-center gap-5 w-full'>
           <div className='flex justify-center items-center gap-4'>
