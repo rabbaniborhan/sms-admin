@@ -4,7 +4,6 @@ import {
   DashboardTotalSection,
   LineChart,
 } from "../components";
-import Calendar from "react-calendar";
 import { useState } from "react";
 import DashboardCalender from "../components/DashboardParts/DashboardCalender";
 
@@ -14,6 +13,11 @@ const Home = () => {
   const onChange = (date) => {
     setDate(date);
   };
+
+  if (typeof window !== "undefined") {
+    const token = window.localStorage.getItem("jwtToken");
+    console.log(token);
+  }
 
   return (
     <main className='w-11/12 mx-auto pb-32'>
