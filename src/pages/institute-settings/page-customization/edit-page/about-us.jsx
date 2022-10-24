@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
+import { useDispatch } from "react-redux";
 import {
   Banner,
   Footer,
@@ -7,13 +8,13 @@ import {
   PrincipalSection,
   StatisticsSection,
 } from "../../../../components";
-import { ShowContext } from "../../../_app";
+import { uiActions } from "../../../../redux/store/slices/uiSlices";
 
 const AboutUs = () => {
-  const [show, setShow] = useContext(ShowContext);
+  const dispatch = useDispatch();
   const router = useRouter();
   if (router.asPath.includes("/edit-page")) {
-    setShow(false);
+    dispatch(uiActions.setLayout());
   }
 
   return (

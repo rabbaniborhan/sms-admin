@@ -1,19 +1,20 @@
-import { createContext } from "react";
-import { useState } from "react";
+import { Provider } from "react-redux";
 import { Layout } from "../components";
 import "../styles/globals.css";
-
-export const ShowContext = createContext();
+import store from "../redux/store";
+import { useRouter } from "next/router";
+import { NextShield } from "next-shield";
+import Loading from "../components/Loading/Loading";
 
 function MyApp({ Component, pageProps }) {
-  const [show, setShow] = useState(true);
-  console.log(show);
+  const router = useRouter();
+
   return (
-    <ShowContext.Provider value={[show, setShow]}>
-      <Layout>
+    <Provider store={store}>
+      <Layout router={router}>
         <Component {...pageProps} />
       </Layout>
-    </ShowContext.Provider>
+    </Provider>
   );
 }
 

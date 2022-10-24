@@ -1,14 +1,16 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { LayoutSecond } from "../../../../components";
 import { Edit } from "../../../../constants/icons";
+import { uiActions } from "../../../../redux/store/slices/uiSlices";
 import { ShowContext } from "../../../_app";
 
 const AdmissionInstructions = () => {
-  const [show, setShow] = useContext(ShowContext);
+  const dispatch = useDispatch();
   const router = useRouter();
   if (router.asPath.includes("/edit-page")) {
-    setShow(false);
+    dispatch(uiActions.setLayout());
   }
   return (
     <LayoutSecond>

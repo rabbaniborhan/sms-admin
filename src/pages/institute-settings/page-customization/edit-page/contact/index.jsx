@@ -1,16 +1,17 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { Banner, Footer } from "../../../../../components";
 import { Maps } from "../../../../../components";
-import { ShowContext } from "../../../../_app";
+import { uiActions } from "../../../../../redux/store/slices/uiSlices";
 import ContactDetails from "./ContactDetails";
 
 const Contact = () => {
-  const [show, setShow] = useContext(ShowContext);
+  const dispatch = useDispatch();
   const router = useRouter();
   if (router.asPath.includes("/edit-page")) {
-    setShow(false);
+    dispatch(uiActions.setLayout());
   }
   return (
     <div>
