@@ -1,10 +1,20 @@
 import React from "react";
 import images from "../../../../../assets";
 import Image from "next/image";
+import { useState } from "react";
+import { Backdrop } from "../../../../../components";
+import CredentialsForm from "../CradentialsForm/CradentialsForm";
 
 const StudentInfoSlip = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className='w-3/4 mx-auto '>
+      {showModal && (
+        <Backdrop setShowModal={setShowModal}>
+          <CredentialsForm setShowModal={setShowModal} />
+        </Backdrop>
+      )}
       <div className='w-full mx-auto pt-5 pb-1 px-9 text-primary-text bg-white relative ring-[0.5px] ring-[#0D1530CC]'>
         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           <Image src={images.bigLogo} height={750} width={750} />
@@ -91,6 +101,11 @@ const StudentInfoSlip = () => {
       </div>
 
       <div className='w-full flex justify-end items-end gap-3 mx-auto my-16'>
+        <button
+          className='w-42 border border-[#1EB3A6] bg-[#1EB3A6]/5 py-[11px] px-3 rounded font-semibold text-[#1EB3A6]'
+          onClick={() => setShowModal(true)}>
+          Student’s credentials
+        </button>
         <button className='bg-yellow text-white py-3 w-36 rounded'>
           Print
         </button>

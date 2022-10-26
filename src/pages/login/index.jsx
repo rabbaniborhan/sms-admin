@@ -13,9 +13,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const router = useRouter();
-  // if (router.asPath.includes("/login")) {
-  //   dispatch(uiActions.setLayout());
-  // }
+  if (router.asPath.includes("/login")) {
+    dispatch(uiActions.setLayout());
+  }
 
   //Admin Login function
   const login = async (e) => {
@@ -34,7 +34,6 @@ const Login = () => {
 
     const { data } = await Axios(config);
     dispatch(authActions.setToken({ token: data }));
-    Cookies.set("jwtToken", data.data.jwtToken);
     router.push("/");
   };
 

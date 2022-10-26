@@ -4,30 +4,9 @@ import ClassScheduleSelector from "./ClassScheduleSelector";
 
 const ClassScheduleForm = ({ setShowModal }) => {
   return (
-    <div className='w-[450px] h-[510px] bg-white rounded relative'>
-      <button onClick={() => setShowModal(false)}>
-        <Cross className='absolute top-3 right-3 text-[#7B7B7B]' />
-      </button>
-      <div>
-        <h2 className='text-latest-news-color text-center text-2xl my-3 font-bold'>
-          Class Schedule
-        </h2>
-        <div className='mb-7'>
-          <div className='flex justify-center items-center'>
-            <span className='bg-primary p-2 mr-[-2px] heading-polygon' />
-            <span className='w-[250px] py-[1px] bg-primary' />
-            <span className='bg-primary p-2 ml-[-2px] heading-polygon' />
-          </div>
-          <div className='flex justify-center items-center'>
-            <span className='bg-primary p-2 mr-[-2px] heading-polygon' />
-            <span className='w-[150px] py-[1px] bg-primary' />
-            <span className='bg-primary p-2 ml-[-2px] heading-polygon' />
-          </div>
-        </div>
-      </div>
-
+    <div className='w-[450px] h-[400px] bg-white rounded mx-auto border border-gray-300'>
       {/* Schedule form */}
-      <form className='px-10'>
+      <form className='px-10 py-8'>
         <div className='flex justify-center items-center gap-8'>
           <div className='flex flex-col justify-start items-start gap-[31px]'>
             <label htmlFor=''>Weekend</label>
