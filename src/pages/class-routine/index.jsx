@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { useState } from "react";
 import { Backdrop } from "../../components";
@@ -10,6 +11,12 @@ import CreateClassRoutineForm from "./CreateClassRoutineForm/CreateClassRoutineF
 const ClassRoutinePage = () => {
   const [showScheduleModal, setshowScheduleModal] = useState(false);
   const [showCreateModal, setshowCreateModal] = useState(false);
+  const router = useRouter();
+
+  const handlePush = () => {
+    router.push("/class-routine/class-schedule");
+  };
+
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -33,7 +40,7 @@ const ClassRoutinePage = () => {
       <div className='flex justify-center items-center gap-5 mb-16'>
         <button
           className='py-3 px-4 rounded bg-primary text-white text-sm font-semibold'
-          onClick={() => setshowScheduleModal(true)}>
+          onClick={handlePush}>
           Class Schedule
         </button>
         <button

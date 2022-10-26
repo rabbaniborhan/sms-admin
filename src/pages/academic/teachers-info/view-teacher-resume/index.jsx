@@ -1,9 +1,14 @@
 import Image from "next/image";
 import React from "react";
+import { useState } from "react";
 import images from "../../../../assets";
 import { Delete } from "../../../../constants/icons";
+import { Backdrop } from "../../../../components";
+import CredentialsForm from "../../../student/student-information/view-student-info/CradentialsForm/CradentialsForm";
+import TeacherCredentialsForm from "./TeacherCradentialsForm/TeacherCradentialsForm";
 
 const ViewTeacherResumePage = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -48,7 +53,19 @@ const ViewTeacherResumePage = () => {
         <div>
           <Image src={images.principalCV} />
         </div>
+
+        {showModal && (
+          <Backdrop setShowModal={setShowModal}>
+            <TeacherCredentialsForm setShowModal={setShowModal} />
+          </Backdrop>
+        )}
+
         <div className='w-full flex justify-end items-end gap-3 mx-auto'>
+          <button
+            className='w-42 border border-[#1EB3A6] bg-[#1EB3A6]/5 py-[11px] px-3 rounded font-semibold text-[#1EB3A6]'
+            onClick={() => setShowModal(true)}>
+            Teacher’s credentials
+          </button>
           <button className='bg-yellow text-white py-3 w-36 rounded'>
             Print
           </button>

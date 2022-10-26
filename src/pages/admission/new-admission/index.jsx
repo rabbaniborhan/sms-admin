@@ -1,9 +1,22 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import { AdmissionTable, FilterButtons } from "../../../components";
 import { tableData } from "../../../constants/tableData/tableData";
+import { Axios } from "../../../core/axios";
 import ApplicationSearchForm from "./TotalSection/ApplicationSearchForm/ApplicationSearchForm";
 import TotalSection from "./TotalSection/TotalSection";
 
 const AdmissionPage = () => {
+  const [admissionData, setAdmissionData] = useState([]);
+
+  const getData = async () => {
+    const { data } = await Axios.get("/admin/admission");
+    setAdmissionData(data.data);
+  };
+
+  useEffect(() => {
+    getData();
+  });
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -26,7 +39,7 @@ const AdmissionPage = () => {
       <TotalSection />
       <FilterButtons />
       <ApplicationSearchForm />
-      <AdmissionTable tableData={tableData} />
+      <AdmissionTable tableData={admissionData} />
     </div>
   );
 };
