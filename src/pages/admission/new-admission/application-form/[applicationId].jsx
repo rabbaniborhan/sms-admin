@@ -1,10 +1,25 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Pencil } from "../../../../constants/icons";
+import { Axios } from "../../../../core/axios";
 import ApplicationForm from "./ApplicationForm";
 import ApplicationFormEdit from "./ApplicationFormEdit";
 
-const ApplicationFormPage = () => {
+const ApplicationFormPage = ({ applicantData }) => {
   const [showModal, setShowModal] = useState(false);
+  const [data, setData] = useState({});
+  const router = useRouter();
+  const appId = router.query.applicationId;
+
+  const fetchData = async () => {
+    const { data } = await Axios(`/admin/admission/${appId}`);
+    setData(data.data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className='w-full mx-auto mt-10 pb-32'>
@@ -32,8 +47,10 @@ const ApplicationFormPage = () => {
           Edit <Pencil />
         </button>
       </div>
-      <ApplicationForm />
-      {showModal && <ApplicationFormEdit setShowModal={setShowModal} />}
+      <ApplicationForm applicantData={data} />
+      {showModal && (
+        <ApplicationFormEdit applicantData={data} setShowModal={setShowModal} />
+      )}
     </div>
   );
 };

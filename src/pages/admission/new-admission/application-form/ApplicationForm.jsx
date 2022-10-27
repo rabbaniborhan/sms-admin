@@ -3,11 +3,11 @@ import images from "../../../../assets";
 import Image from "next/image";
 import AcknowledgementTable from "./ApplicationFormTable";
 
-const ApplicationForm = () => {
+const ApplicationForm = ({ applicantData }) => {
   return (
     <div className='w-3/4 mx-auto '>
       <div className='w-full mx-auto pt-5 pb-1 px-9 text-primary-text bg-white relative ring-[0.5px] ring-[#0D1530CC]'>
-        <div className='absolute lg:top-[35%] lg:left-[190px] xl:left-[350px]'>
+        <div className='absolute lg:top-[35%] lg:left-[190px] xl:left-[350px] -z-[100]'>
           <Image src={images.bigLogo} height={550} width={550} />
         </div>
         <div className='text-center space-y-2'>
@@ -33,9 +33,9 @@ const ApplicationForm = () => {
                 <p>name</p>
                 <p>father's name</p>
                 <p>mother's name</p>
-                <p>Application For Class</p>
+                <p>Date of Birth</p>
                 <p>Phone</p>
-                <p>Religeon</p>
+                <p>Religon</p>
                 <p>Gender</p>
                 <p>Blood Group</p>
                 <p>Present Address</p>
@@ -56,18 +56,18 @@ const ApplicationForm = () => {
                 <p>:</p>
               </div>
               <div className='space-y-5 font-bold text-md'>
-                <p>136549878</p>
-                <p>Six</p>
-                <p>Mahmudul Haque</p>
-                <p>Anamul Haque</p>
-                <p>Hosneara Pervin</p>
-                <p>28/10/2000</p>
-                <p>01716714733</p>
-                <p>Islam</p>
-                <p>Male</p>
-                <p>A+ (Positive)</p>
-                <p>Zero point, Rajshahi</p>
-                <p>Zero point, Rajshahi</p>
+                <p>{applicantData.applicantsId}</p>
+                <p>{applicantData.applicantsClass}</p>
+                <p>{applicantData.applicantsName}</p>
+                <p>{applicantData.fatherName}</p>
+                <p>{applicantData.motherName}</p>
+                <p>{applicantData.dateOfBirth}</p>
+                <p>{applicantData.phone}</p>
+                <p>{applicantData.religion}</p>
+                <p>{applicantData.gender}</p>
+                <p>{applicantData.bloodGroup}</p>
+                <p>{applicantData.presentAddress}</p>
+                <p>{applicantData.permanentAddress}</p>
               </div>
             </div>
             <div className=' flex justify-between capitalize'>
@@ -78,7 +78,7 @@ const ApplicationForm = () => {
                 <p>:</p>
               </div>
               <div className='font-bold space-y-5'>
-                <p>11/12/20022</p>
+                <p>{applicantData.createdAt}</p>
               </div>
             </div>
           </div>
