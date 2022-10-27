@@ -4,7 +4,7 @@ import AdmissionFormColons from "./AdmissionFormColons";
 import AdmissionFormInputs from "./AdmissionFormInputs";
 import AdmissionFormLabels from "./AdmissionFormLabels";
 
-const AdmissionForm = ({ setShowModal }) => {
+const AdmissionForm = ({ setShowModal, applicantData }) => {
   return (
     <div>
       <div className='w-[1000px] mx-auto p-10 bg-white text-primary-text relative'>
@@ -30,18 +30,13 @@ const AdmissionForm = ({ setShowModal }) => {
         </div>
 
         {/* Admission from inputs */}
-        <form>
+        <div>
           <div className='flex justify-between items-center xl:w-4/5 lg:w-11/12 mx-auto mt-16'>
             <AdmissionFormLabels />
             <AdmissionFormColons />
-            <AdmissionFormInputs />
+            <AdmissionFormInputs applicantData={applicantData} />
           </div>
-          <div className='flex justify-end items-end gap-3 w-4/5 mx-auto mt-16'>
-            <button className='bg-primary text-white py-3 w-36 rounded -mr-14'>
-              Update
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );
