@@ -1,34 +1,40 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { Add, Delete, Eye } from "../../../../constants/icons";
+import { Axios } from "../../../../core/axios";
+import swal from "sweetalert";
 
-const ExamRoutineTableData = ({ tableData }) => {
+const ExamRoutineTableData = ({ examData }) => {
   const router = useRouter();
 
-  const handlePushAdd = (e) => {
-    e.preventDefault();
-
+  const handlePushAdd = () => {
     router.push("/exams/exam-routine/set-exam-routine");
   };
 
-  const handlePushShow = (e) => {
-    e.preventDefault();
+  const handlePushShow = (id) => {
+    router.push(`/exams/exam-routine/edit-exam-routine/${id}`);
+  };
 
-    router.push("/exams/exam-routine/edit-exam-routine");
+  const handleDelete = async (id) => {
+    const { data } = await Axios.delete(`/admin/exam-routine/${id}`);
+    console.log(data);
+    if (data.status === 200) {
+      swal("Deleted", "Routine Deleted Successfully", "success");
+    }
   };
 
   return (
     <tbody>
-      {tableData?.map((item, i) => (
+      {examData.map((item, i) => (
         <tr key={i} className={`${i % 2 === 0 ? "bg-[#1EB3A61A]" : ""}`}>
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
-            {item.exam}
+            {item.examName}
           </td>
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.examYear}
           </td>
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
-            {item.class}
+            Class-{item.class}
           </td>
 
           <td className='py-3 px-2 text-center'>
@@ -36,10 +42,10 @@ const ExamRoutineTableData = ({ tableData }) => {
               <button onClick={handlePushAdd}>
                 <Add className='text-primary h-6 w-6 cursor-pointer' />
               </button>
-              <button onClick={handlePushShow}>
+              <button onClick={() => handlePushShow(item._id)}>
                 <Eye className='text-primary h-6 w-6 cursor-pointer' />
               </button>
-              <button>
+              <button onClick={() => handleDelete(item._id)}>
                 <Delete className='text-[#FF0000B2] h-6 w-6 cursor-pointer' />
               </button>
             </span>

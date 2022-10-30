@@ -1,7 +1,7 @@
 import TableData from "./TableData";
-import Pagination from "../Pagination/Pagination";
+import PaginationRounded from "../PaginationRounded/PaginationRounded";
 
-const AdmissionTable = ({ tableData }) => {
+const AdmissionTable = ({ tableData, setPagination }) => {
   return (
     <div className='mt-16'>
       <table className=' w-full ring-[0.3px] ring-[#5E5E5E] bg-white rounded overflow-hidden'>
@@ -20,8 +20,9 @@ const AdmissionTable = ({ tableData }) => {
 
         <TableData tableData={tableData} />
       </table>
-      <div>
-        <p className='font-semibold text-sm mt-6'>10 Result</p>
+      <div className='flex justify-between items-center mt-6'>
+        <p className='font-semibold text-sm'>10 Result</p>
+        <PaginationRounded setPagination={setPagination} />
       </div>
     </div>
   );

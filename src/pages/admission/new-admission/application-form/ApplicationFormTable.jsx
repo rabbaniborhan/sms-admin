@@ -1,6 +1,6 @@
 import React from "react";
 
-const ApplicationFormTable = () => {
+const ApplicationFormTable = ({ tableData }) => {
   return (
     <table className='w-full mx-auto my-12'>
       <thead>
@@ -18,7 +18,7 @@ const ApplicationFormTable = () => {
             Year
           </th>
           <th className='py-1 px-2 text-center border-[0.5px] border-gray-500'>
-            Group
+            Institute Name
           </th>
           <th className='py-1 px-2 text-center border-[0.5px] border-gray-500'>
             GPA
@@ -28,42 +28,22 @@ const ApplicationFormTable = () => {
       <tbody>
         <tr>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            HSC/Equlv.
+            JSC/Equlv.
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            92986735
+            {tableData.jscRoll}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            Rajshahi
+            {tableData.board}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            2017
+            {tableData.passingYear}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            Humanities
+            {tableData.institutionName}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            Humanities
-          </td>
-        </tr>
-        <tr>
-          <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            SSC/Equlv.
-          </td>
-          <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            92986735
-          </td>
-          <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            Rajshahi
-          </td>
-          <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            2017
-          </td>
-          <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            Humanities
-          </td>
-          <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            Humanities
+            {tableData.gpa}
           </td>
         </tr>
       </tbody>

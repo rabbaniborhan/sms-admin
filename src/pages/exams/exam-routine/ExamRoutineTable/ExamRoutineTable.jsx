@@ -1,26 +1,27 @@
 import React from "react";
-import { examRoutineTableData } from "../../../../constants/tableData/examRoutineTableData";
+import PaginationRounded from "../../../../components/PaginationRounded/PaginationRounded";
 import ExamRoutineTableData from "./ExamRoutineTableData";
 
-const ExamRoutineTable = () => {
+const ExamRoutineTable = ({ examData, setPagination }) => {
   return (
-    <div className="w-full mx-auto mt-16">
-      <table className="w-full ring-[0.3px] ring-[#5E5E5E] bg-white rounded overflow-hidden">
+    <div className='w-full mx-auto mt-16'>
+      <table className='w-full ring-[0.3px] ring-[#5E5E5E] bg-white rounded overflow-hidden'>
         <thead>
-          <tr className="bg-primary">
-            <th className="py-4 px-10 text-white text-center">Exam Name</th>
-            <th className="py-4 px-10 text-white text-center">Exam Year</th>
+          <tr className='bg-primary'>
+            <th className='py-4 px-10 text-white text-center'>Exam Name</th>
+            <th className='py-4 px-10 text-white text-center'>Exam Year</th>
 
-            <th className="py-4 px-10 text-white text-center">Class</th>
+            <th className='py-4 px-10 text-white text-center'>Class</th>
 
-            <th className="py-4 px-10 text-white text-center">Action</th>
+            <th className='py-4 px-10 text-white text-center'>Action</th>
           </tr>
         </thead>
 
-        <ExamRoutineTableData tableData={examRoutineTableData} />
+        <ExamRoutineTableData examData={examData} />
       </table>
-      <div>
-        <p className="font-semibold mt-5 text-sm">10 Result</p>
+      <div className='flex justify-between items-center mt-5'>
+        <p className='font-semibold text-sm'>{examData.length} Result</p>
+        <PaginationRounded setPagination={setPagination} />
       </div>
     </div>
   );
