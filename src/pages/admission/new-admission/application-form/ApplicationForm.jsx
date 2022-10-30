@@ -1,12 +1,20 @@
 import React from "react";
+import moment from "moment";
 import images from "../../../../assets";
 import Image from "next/image";
 import AcknowledgementTable from "./ApplicationFormTable";
 
 const ApplicationForm = ({ applicantData }) => {
+  console.log(applicantData);
+  const dateOfBirth = moment(applicantData.dateOfBirth)
+    .utc()
+    .format("DD-MM-YYYY");
+  const dateOfApply = moment(applicantData.createdAt)
+    .utc()
+    .format("DD-MM-YYYY");
   return (
     <div className='w-3/4 mx-auto '>
-      <div className='w-full mx-auto pt-5 pb-1 px-9 text-primary-text bg-white relative ring-[0.5px] ring-[#0D1530CC]'>
+      <div className='w-full mx-auto pt-5 pb-1 px-9 text-primary-text bg-white relative ring-[0.5px] ring-[#0D1530CC] -z-[200]'>
         <div className='absolute lg:top-[35%] lg:left-[190px] xl:left-[350px] -z-[100]'>
           <Image src={images.bigLogo} height={550} width={550} />
         </div>
@@ -61,7 +69,7 @@ const ApplicationForm = ({ applicantData }) => {
                 <p>{applicantData.applicantsName}</p>
                 <p>{applicantData.fatherName}</p>
                 <p>{applicantData.motherName}</p>
-                <p>{applicantData.dateOfBirth}</p>
+                <p>{dateOfBirth}</p>
                 <p>{applicantData.phone}</p>
                 <p>{applicantData.religion}</p>
                 <p>{applicantData.gender}</p>
@@ -78,11 +86,11 @@ const ApplicationForm = ({ applicantData }) => {
                 <p>:</p>
               </div>
               <div className='font-bold space-y-5'>
-                <p>{applicantData.createdAt}</p>
+                <p>{dateOfApply}</p>
               </div>
             </div>
           </div>
-          <AcknowledgementTable />
+          <AcknowledgementTable tableData={applicantData} />
 
           <div className='flex justify-end items-end mt-40'>
             <h3 className='text-semibold text-md flex flex-col justify-center items-start gap-1 italic font-semibold'>

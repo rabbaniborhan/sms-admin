@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { AdmissionTable, FilterButtons } from "../../../components";
-import { tableData } from "../../../constants/tableData/tableData";
+import { AdmissionTable, Backdrop, FilterButtons } from "../../../components";
+import Loading from "../../../components/Loading/Loading";
 import { Axios } from "../../../core/axios";
 import ApplicationSearchForm from "./TotalSection/ApplicationSearchForm/ApplicationSearchForm";
 import TotalSection from "./TotalSection/TotalSection";
 
 const AdmissionPage = () => {
   const [admissionData, setAdmissionData] = useState([]);
+  const [pagination, setPagination] = useState(1);
 
   const getData = async () => {
-    const { data } = await Axios.get("/admin/admission");
+    const { data } = await Axios.get(
+      `/admin/admission?skip=${
+        pagination === 1 ? 0 : 10 * pagination - 10
+      }&limit=10`
+    );
     setAdmissionData(data.data);
   };
 
@@ -39,7 +44,12 @@ const AdmissionPage = () => {
       <TotalSection />
       <FilterButtons />
       <ApplicationSearchForm />
-      <AdmissionTable tableData={admissionData} />
+      <AdmissionTable tableData={admissionData} setPagination={setPagination} />
+      {!admissionData.length && (
+        <Backdrop>
+          <Loading />
+        </Backdrop>
+      )}
     </div>
   );
 };

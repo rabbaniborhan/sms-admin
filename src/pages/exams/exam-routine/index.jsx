@@ -4,9 +4,28 @@ import ExamRoutineSearchForm from "./ExamRoutineSearchForm/ExamRoutineSearchForm
 import CreateExamRoutineForm from "./CreateExamRotineForm/CreateExamRoutineForm";
 import { Backdrop } from "../../../components";
 import ExamRoutineTable from "./ExamRoutineTable/ExamRoutineTable";
+import { Axios } from "../../../core/axios";
+import { useEffect } from "react";
+import Loading from "../../../components/Loading/Loading";
 
 const ExamsPage = () => {
   const [showModal, setShowModal] = useState(false);
+  const [examData, setExamData] = useState([]);
+  const [pagination, setPagination] = useState(1);
+
+  const getData = async () => {
+    const { data } = await Axios(
+      `/admin/exam-routine?skip=${
+        pagination === 1 ? 0 : 10 * pagination - 10
+      }&limit=10`
+    );
+    setExamData(data.data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, [examData]);
+
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -37,7 +56,12 @@ const ExamsPage = () => {
       </div>
 
       <ExamRoutineSearchForm />
-      <ExamRoutineTable />
+      <ExamRoutineTable examData={examData} setPagination={setPagination} />
+      {!examData.length && (
+        <Backdrop>
+          <Loading />
+        </Backdrop>
+      )}
 
       {showModal && (
         <Backdrop setShowModal={setShowModal}>

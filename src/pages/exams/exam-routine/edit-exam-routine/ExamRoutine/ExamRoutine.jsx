@@ -8,7 +8,21 @@ const ExamRoutine = ({
   setShowDateModal,
   setShowTimeModal,
   setShowSubjectModal,
+  examData,
 }) => {
+  //Sorting exams by the date
+  function compare(a, b) {
+    if (a.startDateTime < b.startDateTime) {
+      return -1;
+    }
+    if (a.startDateTime > b.startDateTime) {
+      return 1;
+    }
+    return 0;
+  }
+
+  examData?.examsData?.sort(compare);
+
   return (
     <div>
       <div className='w-9/12 mx-auto py-10 px-10 bg-white text-primary-text relative'>
@@ -21,7 +35,7 @@ const ExamRoutine = ({
             Exam Routine - 2022
             <span className='bg-gray-400 py-[1px] w-52'></span>
           </h3>
-          <p>Class - </p>
+          <p>Class - {examData.class}</p>
         </div>
         <table className='border-collapse w-full my-10 text-gray-600 '>
           <thead>
@@ -33,7 +47,7 @@ const ExamRoutine = ({
               </th>
             </tr>
           </thead>
-          {examRoutineData?.map((item, i) => (
+          {examData.examsData?.map((item, i) => (
             <ExamRoutineTableData
               key={i}
               data={item}

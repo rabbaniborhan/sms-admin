@@ -19,7 +19,7 @@ const ApplicationFormPage = ({ applicantData }) => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [data]);
 
   return (
     <div className='w-full mx-auto mt-10 pb-32'>

@@ -4,11 +4,28 @@ import SetDateAndDay from "../set-exam-routine/SetExamRoutine/SetExamRoutineForm
 import SetTime from "../set-exam-routine/SetExamRoutine/SetExamRoutineForm/SetTime/SetTime";
 import SetSubject from "../set-exam-routine/SetExamRoutine/SetExamRoutineForm/SetSubject/SetSubject";
 import ExamRoutine from "./ExamRoutine/ExamRoutine";
+import { useRouter } from "next/router";
+import { Axios } from "../../../../core/axios";
+import { useEffect } from "react";
 
 const SetExamRoutinePage = () => {
   const [showDateModal, setShowDateModal] = useState(false);
   const [showTimeModal, setShowTimeModal] = useState(false);
   const [showSubjectModal, setShowSubjectModal] = useState(false);
+  const [individualExamData, setIndividualExamData] = useState({});
+  const router = useRouter();
+  const examId = router.query.examId;
+  console.log(individualExamData);
+
+  const getData = async () => {
+    const { data } = await Axios.get(`/admin/exam-routine/${examId}`);
+    setIndividualExamData(data.data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <div>
       <div className='mt-16 mb-24'>
@@ -51,6 +68,7 @@ const SetExamRoutinePage = () => {
         setShowDateModal={setShowDateModal}
         setShowTimeModal={setShowTimeModal}
         setShowSubjectModal={setShowSubjectModal}
+        examData={individualExamData}
       />
     </div>
   );
