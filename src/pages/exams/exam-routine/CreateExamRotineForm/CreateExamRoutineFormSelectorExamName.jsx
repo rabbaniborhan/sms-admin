@@ -1,18 +1,23 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { useEffect } from "react";
 
 const people = [
-  { name: "Wade Cooper" },
-  { name: "Arlene Mccoy" },
-  { name: "Devon Webb" },
-  { name: "Tom Cook" },
-  { name: "Tanya Fox" },
-  { name: "Hellen Schmidt" },
+  { name: "First Term Examination" },
+  { name: "Second Term Examination" },
+  { name: "Annual Examination" },
 ];
 
-export default function CreateExamRoutineFormSelector() {
+export default function CreateExamRoutineFormSelectorExamName({
+  routineData,
+  setRoutineData,
+}) {
   const [selected, setSelected] = useState(people[0]);
+
+  useEffect(() => {
+    setRoutineData({ ...routineData, examName: selected.name });
+  }, [selected]);
 
   return (
     <div className='w-[213px]'>

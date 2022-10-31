@@ -1,8 +1,34 @@
+import { Axios } from "../../../../core/axios";
 import React from "react";
+import { useState } from "react";
 import { Cross } from "../../../../constants/icons";
-import CreateExamRoutineFormSelector from "./CreateExamRoutineFormSelector";
+import CreateExamRoutineFormSelectorClass from "./CreateExamRoutineFormSelectorClass";
+import CreateExamRoutineFormSelectorExamName from "./CreateExamRoutineFormSelectorExamName";
+import CreateExamRoutineFormSelectorExamYear from "./CreateExamRoutineFormSelectorExamYear";
+import swal from "sweetalert";
 
 const CreateExamRoutineForm = ({ setShowModal }) => {
+  const [routineData, setRoutineData] = useState({
+    class: "",
+    examName: "",
+    examYear: "",
+  });
+
+  const postExamRoutineData = async (e) => {
+    e.preventDefault();
+
+    let config = {
+      method: "post",
+      url: "/admin/exam-routine",
+      data: routineData,
+    };
+
+    const { data } = await Axios(config);
+    console.log(data);
+    if (data.status === 201) {
+      swal("Successful!", "Routine Added Successfully!", "success");
+    }
+  };
   return (
     <div>
       <div className='w-[450px] h-[380px] bg-white rounded relative'>
@@ -28,7 +54,7 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
         </div>
 
         {/* Creation form */}
-        <form className='px-8'>
+        <form className='px-8' onSubmit={postExamRoutineData}>
           <div className='flex justify-center items-center gap-8'>
             <div className='flex flex-col justify-start items-start gap-[38px]'>
               <label htmlFor=''>Exam Name</label>
@@ -43,9 +69,18 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
             </div>
 
             <div className='flex flex-col justify-center items-center gap-5'>
-              <CreateExamRoutineFormSelector />
-              <CreateExamRoutineFormSelector />
-              <CreateExamRoutineFormSelector />
+              <CreateExamRoutineFormSelectorExamName
+                setRoutineData={setRoutineData}
+                routineData={routineData}
+              />
+              <CreateExamRoutineFormSelectorExamYear
+                setRoutineData={setRoutineData}
+                routineData={routineData}
+              />
+              <CreateExamRoutineFormSelectorClass
+                setRoutineData={setRoutineData}
+                routineData={routineData}
+              />
             </div>
           </div>
 

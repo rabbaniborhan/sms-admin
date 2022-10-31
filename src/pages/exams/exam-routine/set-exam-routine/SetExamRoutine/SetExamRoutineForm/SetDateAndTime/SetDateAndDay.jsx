@@ -40,7 +40,12 @@ const SetDateAndDay = ({ setShowDateModal }) => {
           </div>
 
           <div className='flex flex-col justify-center items-center gap-5'>
-            <SetDateAndDaySelector />
+            <input
+              type='date'
+              name='date-picker'
+              id='exam-date-picker'
+              className='py-1 px-2 border border-gray-400 rounded outline-none w-full'
+            />
             <input
               type='text'
               className='py-1 px-2 border border-gray-400 rounded outline-none'

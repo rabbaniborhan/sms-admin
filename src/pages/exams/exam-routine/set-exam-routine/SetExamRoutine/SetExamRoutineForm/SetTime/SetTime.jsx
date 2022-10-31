@@ -25,24 +25,31 @@ const SetTime = ({ setShowTimeModal }) => {
         </div>
       </div>
 
-      <form className='px-10'>
+      <form className='px-5'>
         <div className='flex justify-center items-center gap-8'>
           <div className='flex flex-col justify-start items-start gap-[31px]'>
-            <label htmlFor=''>Time</label>
+            <p htmlFor=''>Start Time</p>
+            <p htmlFor=''>End Time</p>
           </div>
 
           <div className='flex flex-col justify-center items-center gap-[31px]'>
+            <p>:</p>
             <p>:</p>
           </div>
 
           <div className='flex flex-col justify-center items-center gap-5'>
             <input
-              type='text'
-              className='py-1 px-2 border border-gray-400 rounded outline-none'
+              type='time'
+              className='py-1 px-2 border border-gray-400 rounded outline-none uppercase w-60'
+            />
+
+            <input
+              type='time'
+              className='py-1 px-2 border border-gray-400 rounded outline-none uppercase w-60'
             />
           </div>
         </div>
-        <div className='text-right mt-10'>
+        <div className='text-right mt-5'>
           <button
             type='submit'
             className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold inline-block mr-6'>
