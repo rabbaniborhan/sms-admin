@@ -16,7 +16,6 @@ const Home = () => {
 
   if (typeof window !== "undefined") {
     const token = window.localStorage.getItem("jwtToken");
-    console.log(token);
   }
 
   return (

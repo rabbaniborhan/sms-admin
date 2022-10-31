@@ -27,7 +27,7 @@ const ExamRoutineTableData = ({ examData }) => {
     <tbody>
       {examData.map((item, i) => (
         <tr key={i} className={`${i % 2 === 0 ? "bg-[#1EB3A61A]" : ""}`}>
-          <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>
+          <td className='py-4 px-20 text-left text-sm font-semibold text-primary-text'>
             {item.examName}
           </td>
           <td className='py-4 px-2 text-center text-sm font-semibold text-primary-text'>

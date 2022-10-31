@@ -8,7 +8,7 @@ const ExamRoutineTable = ({ examData, setPagination }) => {
       <table className='w-full ring-[0.3px] ring-[#5E5E5E] bg-white rounded overflow-hidden'>
         <thead>
           <tr className='bg-primary'>
-            <th className='py-4 px-10 text-white text-center'>Exam Name</th>
+            <th className='py-4 px-20 text-white text-left'>Exam Name</th>
             <th className='py-4 px-10 text-white text-center'>Exam Year</th>
 
             <th className='py-4 px-10 text-white text-center'>Class</th>
