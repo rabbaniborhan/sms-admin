@@ -15,10 +15,10 @@ export default function SetSubjectSelector() {
   const [selected, setSelected] = useState(people[0]);
 
   return (
-    <div className='w-[213px]'>
+    <div className='w-full'>
       <Listbox value={selected} onChange={setSelected}>
         <div className='relative mt-1'>
-          <Listbox.Button className='relative cursor-default bg-white pl-3 pr-10 text-left py-2 px-2 border border-gray-400 rounded shadow-sm w-[213px] focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
+          <Listbox.Button className='relative cursor-default bg-white pl-3 pr-10 text-left py-2 px-2 border border-gray-400 rounded shadow-sm w-full focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
             <span className='block truncate'>{selected.name}</span>
             <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <SelectorIcon

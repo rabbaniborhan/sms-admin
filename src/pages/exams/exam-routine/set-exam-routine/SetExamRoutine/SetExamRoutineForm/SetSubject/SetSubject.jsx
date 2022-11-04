@@ -37,14 +37,14 @@ const SetSubject = ({ setShowSubjectModal }) => {
             <p>:</p>
           </div>
 
-          <div className='flex flex-col justify-center items-center gap-5'>
+          <div className='flex flex-col justify-center items-center gap-5 w-full'>
             <SetSubjectSelector />
           </div>
         </div>
         <div className='text-right mt-10'>
           <button
             type='submit'
-            className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold inline-block mr-3'>
+            className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold inline-block'>
             Create
           </button>
         </div>

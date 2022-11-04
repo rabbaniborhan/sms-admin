@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import images from "../../../../../assets";
-import { examRoutineData } from "../../../../../constants/tableData/examRoutineTableData";
 import ExamRoutineTableData from "./ExamRoutineTableData";
 
 const ExamRoutine = ({
@@ -31,9 +30,9 @@ const ExamRoutine = ({
           <h2 className='text-3xl text-bold'>
             Purba Rampura High School & College
           </h2>
-          <h3 className='text-semibold text-xl flex flex-col justify-center items-center gap-1'>
-            Exam Routine - 2022
-            <span className='bg-gray-400 py-[1px] w-52'></span>
+          <h3 className='text-semibold text-xl flex flex-col justify-center items-center gap-1 w-fit mx-auto'>
+            {examData.examName} - 2022
+            <span className='bg-gray-400 py-[1px] w-full'></span>
           </h3>
           <p>Class - {examData.class}</p>
         </div>

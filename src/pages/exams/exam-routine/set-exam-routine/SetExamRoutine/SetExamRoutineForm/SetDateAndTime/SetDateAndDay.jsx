@@ -1,8 +1,32 @@
+import moment from "moment/moment";
 import React from "react";
+import { useRef } from "react";
+import { useSelector } from "react-redux";
+import swal from "sweetalert";
 import { Cross } from "../../../../../../../constants/icons";
-import SetDateAndDaySelector from "./SetDateAndDaySelector";
+import { Axios } from "../../../../../../../core/axios";
 
-const SetDateAndDay = ({ setShowDateModal }) => {
+const SetDateAndDay = ({ setShowDateModal, examId }) => {
+  const id = useSelector((state) => state.id.id);
+  const dateRef = useRef();
+
+  console.log("hello");
+
+  const editDate = async (e) => {
+    e.preventDefault();
+    const date = moment(dateRef.current.value).format("DD/MM/YYYY");
+    const { data } = await Axios({
+      method: "patch",
+      url: `/admin/exam-routine/${examId}/exam`,
+      data: {
+        _id: id,
+        examDate: `${date}, 00:00:00 PM`,
+      },
+    });
+    console.log(data);
+    swal("Successful!", "Date Edited Successfully", "success");
+  };
+
   return (
     <div className='w-[450px] h-[310px] bg-white rounded relative'>
       <button onClick={() => setShowDateModal(false)}>
@@ -15,23 +39,23 @@ const SetDateAndDay = ({ setShowDateModal }) => {
         <div className='mb-7'>
           <div className='flex justify-center items-center'>
             <span className='bg-primary p-2 mr-[-2px] heading-polygon' />
-            <span className='w-[250px] py-[1px] bg-primary' />
+            <span className='w-[300px] py-[1px] bg-primary' />
             <span className='bg-primary p-2 ml-[-2px] heading-polygon' />
           </div>
           <div className='flex justify-center items-center'>
             <span className='bg-primary p-2 mr-[-2px] heading-polygon' />
-            <span className='w-[150px] py-[1px] bg-primary' />
+            <span className='w-[200px] py-[1px] bg-primary' />
             <span className='bg-primary p-2 ml-[-2px] heading-polygon' />
           </div>
         </div>
       </div>
 
       {/* Set table form */}
-      <form className='px-10'>
-        <div className='flex justify-center items-center gap-8'>
+      <form className='px-10' onSubmit={editDate}>
+        <div className='flex justify-center items-center gap-8 w-full'>
           <div className='flex flex-col justify-start items-start gap-[31px]'>
-            <label htmlFor=''>Date</label>
-            <label htmlFor=''>Day</label>
+            <p htmlFor=''>Date</p>
+            <p htmlFor=''>Day</p>
           </div>
 
           <div className='flex flex-col justify-center items-center gap-[31px]'>
@@ -39,16 +63,17 @@ const SetDateAndDay = ({ setShowDateModal }) => {
             <p>:</p>
           </div>
 
-          <div className='flex flex-col justify-center items-center gap-5'>
+          <div className='flex flex-col justify-center items-center w-full gap-5'>
             <input
               type='date'
               name='date-picker'
               id='exam-date-picker'
               className='py-1 px-2 border border-gray-400 rounded outline-none w-full'
+              ref={dateRef}
             />
             <input
-              type='text'
-              className='py-1 px-2 border border-gray-400 rounded outline-none'
+              type='time'
+              className='py-1 px-2 border border-gray-400 rounded outline-none w-full'
             />
           </div>
         </div>
@@ -56,7 +81,7 @@ const SetDateAndDay = ({ setShowDateModal }) => {
           <button
             type='submit'
             className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold'>
-            Create
+            Save
           </button>
         </div>
       </form>

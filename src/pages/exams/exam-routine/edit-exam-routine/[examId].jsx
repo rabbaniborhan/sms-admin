@@ -15,7 +15,6 @@ const SetExamRoutinePage = () => {
   const [individualExamData, setIndividualExamData] = useState({});
   const router = useRouter();
   const examId = router.query.examId;
-  console.log(individualExamData);
 
   const getData = async () => {
     const { data } = await Axios.get(`/admin/exam-routine/${examId}`);
@@ -48,19 +47,22 @@ const SetExamRoutinePage = () => {
 
       {showDateModal && (
         <Backdrop setShowModal={setShowDateModal}>
-          <SetDateAndDay setShowDateModal={setShowDateModal} />
+          <SetDateAndDay setShowDateModal={setShowDateModal} examId={examId} />
         </Backdrop>
       )}
 
       {showTimeModal && (
         <Backdrop setShowModal={setShowTimeModal}>
-          <SetTime setShowTimeModal={setShowTimeModal} />
+          <SetTime setShowTimeModal={setShowTimeModal} examId={examId} />
         </Backdrop>
       )}
 
       {showSubjectModal && (
         <Backdrop setShowModal={setShowSubjectModal}>
-          <SetSubject setShowSubjectModal={setShowSubjectModal} />
+          <SetSubject
+            setShowSubjectModal={setShowSubjectModal}
+            examId={examId}
+          />
         </Backdrop>
       )}
 
