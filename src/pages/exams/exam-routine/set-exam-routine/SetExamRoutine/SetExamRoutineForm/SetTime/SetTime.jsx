@@ -52,8 +52,8 @@ const SetTime = ({ setShowTimeModal }) => {
         <div className='text-right mt-5'>
           <button
             type='submit'
-            className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold inline-block mr-6'>
-            Create
+            className='py-2 px-6 rounded-sm bg-primary text-white text-xs font-semibold inline-block mr-[2%]'>
+            Save
           </button>
         </div>
       </form>

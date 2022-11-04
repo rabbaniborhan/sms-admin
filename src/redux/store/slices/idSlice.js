@@ -1,0 +1,18 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const idState = {
+  id: "",
+};
+
+const idSlice = createSlice({
+  name: "id-slice",
+  initialState: idState,
+  reducers: {
+    setId: (state, { payload }) => {
+      state.id = payload.id;
+    },
+  },
+});
+
+export const idActions = idSlice.actions;
+export default idSlice;
