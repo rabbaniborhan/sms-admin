@@ -21,7 +21,7 @@ const AdmissionTable = ({ tableData, setPagination }) => {
         <TableData tableData={tableData} />
       </table>
       <div className='flex justify-between items-center mt-6'>
-        <p className='font-semibold text-sm'>{tableData.length} Result</p>
+        <p className='font-semibold text-sm'>{tableData?.length} Result</p>
         <PaginationRounded setPagination={setPagination} />
       </div>
     </div>

@@ -18,8 +18,12 @@ const AdmissionPage = () => {
     );
   };
 
-  const { data, isFetching } = useQuery(["student-list", pagination], () =>
-    getData(pagination)
+  const { data, isFetching } = useQuery(
+    ["student-list", pagination],
+    () => getData(pagination),
+    {
+      keepPreviousData: true,
+    }
   );
 
   return (
