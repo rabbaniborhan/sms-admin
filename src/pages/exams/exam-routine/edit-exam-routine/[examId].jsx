@@ -6,30 +6,30 @@ import SetSubject from "../set-exam-routine/SetExamRoutine/SetExamRoutineForm/Se
 import ExamRoutine from "./ExamRoutine/ExamRoutine";
 import { useRouter } from "next/router";
 import { Axios } from "../../../../core/axios";
-import { useEffect } from "react";
+import { useQuery } from "react-query";
+import Loading from "../../../../components/Loading/Loading";
 
 const SetExamRoutinePage = () => {
   const [showDateModal, setShowDateModal] = useState(false);
   const [showTimeModal, setShowTimeModal] = useState(false);
   const [showSubjectModal, setShowSubjectModal] = useState(false);
-  const [individualExamData, setIndividualExamData] = useState({});
   const router = useRouter();
   const examId = router.query.examId;
 
-  const getData = async () => {
-    const { data } = await Axios.get(`/admin/exam-routine/${examId}`);
-    setIndividualExamData(data.data);
+  const getData = () => {
+    return Axios(`/admin/exam-routine/${examId}`);
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  const { isLoading, data, refetch } = useQuery(
+    "individual-routine-data",
+    getData
+  );
 
   return (
     <div>
       <div className='mt-16 mb-24'>
         <h2 className='text-latest-news-color text-center text-3xl my-3 font-bold'>
-          Class Routine
+          Exam Routine
         </h2>
         <div className='mb-10'>
           <div className='flex justify-center items-center'>
@@ -47,13 +47,21 @@ const SetExamRoutinePage = () => {
 
       {showDateModal && (
         <Backdrop setShowModal={setShowDateModal}>
-          <SetDateAndDay setShowDateModal={setShowDateModal} examId={examId} />
+          <SetDateAndDay
+            setShowDateModal={setShowDateModal}
+            examId={examId}
+            refetch={refetch}
+          />
         </Backdrop>
       )}
 
       {showTimeModal && (
         <Backdrop setShowModal={setShowTimeModal}>
-          <SetTime setShowTimeModal={setShowTimeModal} examId={examId} />
+          <SetTime
+            setShowTimeModal={setShowTimeModal}
+            examId={examId}
+            refetch={refetch}
+          />
         </Backdrop>
       )}
 
@@ -62,16 +70,21 @@ const SetExamRoutinePage = () => {
           <SetSubject
             setShowSubjectModal={setShowSubjectModal}
             examId={examId}
+            refetch={refetch}
           />
         </Backdrop>
       )}
 
-      <ExamRoutine
-        setShowDateModal={setShowDateModal}
-        setShowTimeModal={setShowTimeModal}
-        setShowSubjectModal={setShowSubjectModal}
-        examData={individualExamData}
-      />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <ExamRoutine
+          setShowDateModal={setShowDateModal}
+          setShowTimeModal={setShowTimeModal}
+          setShowSubjectModal={setShowSubjectModal}
+          examData={data?.data?.data}
+        />
+      )}
     </div>
   );
 };
