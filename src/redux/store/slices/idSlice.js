@@ -10,6 +10,7 @@ const idSlice = createSlice({
   reducers: {
     setId: (state, { payload }) => {
       state.id = payload.id;
+      console.log(state.id);
     },
   },
 });

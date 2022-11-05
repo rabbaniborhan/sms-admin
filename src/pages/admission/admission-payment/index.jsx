@@ -1,10 +1,27 @@
 import React from "react";
-import { AdmissionTable, FilterButtons } from "../../../components";
-import { tableData } from "../../../constants/tableData/tableData";
+import { AdmissionTable, FilterButtons, Backdrop } from "../../../components";
 import PaymentSearchForm from "./PaymentTotalSection/PaymentSearchForm/PaymentSearchForm";
 import PaymentTotalSection from "./PaymentTotalSection/PaymentTotalSection";
+import { useState } from "react";
+import { useQuery } from "react-query";
+import { Axios } from "../../../core/axios";
+import Loading from "../../../components/Loading/Loading";
 
 const AdmissionPaymentPage = () => {
+  const [pagination, setPagination] = useState(1);
+
+  const getData = (pagination) => {
+    return Axios.get(
+      `/admin/admission?skip=${
+        pagination === 1 ? 0 : 10 * pagination - 10
+      }&limit=10`
+    );
+  };
+
+  const { isFetching, data } = useQuery(["student-list", pagination], () =>
+    getData(pagination)
+  );
+
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -28,7 +45,15 @@ const AdmissionPaymentPage = () => {
       <PaymentTotalSection />
       <FilterButtons />
       <PaymentSearchForm />
-      <AdmissionTable tableData={tableData} />
+      <AdmissionTable
+        tableData={data?.data?.data}
+        setPagination={setPagination}
+      />
+      {isFetching && (
+        <Backdrop>
+          <Loading />
+        </Backdrop>
+      )}
     </div>
   );
 };

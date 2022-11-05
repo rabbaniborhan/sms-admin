@@ -6,25 +6,28 @@ import swal from "sweetalert";
 import { Cross } from "../../../../../../../constants/icons";
 import { Axios } from "../../../../../../../core/axios";
 
-const SetDateAndDay = ({ setShowDateModal, examId }) => {
+const SetDateAndDay = ({ setShowDateModal, examId, refetch }) => {
   const id = useSelector((state) => state.id.id);
   const dateRef = useRef();
 
-  console.log("hello");
-
   const editDate = async (e) => {
     e.preventDefault();
-    const date = moment(dateRef.current.value).format("DD/MM/YYYY");
-    const { data } = await Axios({
-      method: "patch",
-      url: `/admin/exam-routine/${examId}/exam`,
-      data: {
-        _id: id,
-        examDate: `${date}, 00:00:00 PM`,
-      },
-    });
-    console.log(data);
-    swal("Successful!", "Date Edited Successfully", "success");
+    const date = moment(dateRef.current.value).format("MM/DD/YYYY");
+    try {
+      const { data } = await Axios({
+        method: "patch",
+        url: `/admin/exam-routine/${examId}/exam`,
+        data: {
+          _id: id,
+          examDate: date,
+        },
+      });
+      refetch();
+      swal(data.message, "Date Edited Successfully", "success");
+    } catch (error) {
+      const err = error.response.data.errors[0].msg;
+      swal(err, "An Error Occured", "error");
+    }
   };
 
   return (
@@ -72,7 +75,7 @@ const SetDateAndDay = ({ setShowDateModal, examId }) => {
               ref={dateRef}
             />
             <input
-              type='time'
+              type='text'
               className='py-1 px-2 border border-gray-400 rounded outline-none w-full'
             />
           </div>

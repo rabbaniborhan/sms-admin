@@ -1,18 +1,24 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { useEffect } from "react";
 
 const people = [
-  { name: "Wade Cooper" },
-  { name: "Arlene Mccoy" },
-  { name: "Devon Webb" },
-  { name: "Tom Cook" },
-  { name: "Tanya Fox" },
-  { name: "Hellen Schmidt" },
+  { name: "English" },
+  { name: "Bangla" },
+  { name: "Mathmetics" },
+  { name: "Physics" },
+  { name: "Chemistry" },
+  { name: "Biology" },
+  { name: "Social Science" },
 ];
 
-export default function SetSubjectSelector() {
+export default function SetSubjectSelector({ setSubject }) {
   const [selected, setSelected] = useState(people[0]);
+
+  useEffect(() => {
+    setSubject(selected.name);
+  }, [selected]);
 
   return (
     <div className='w-full'>

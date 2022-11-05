@@ -31,10 +31,10 @@ const ExamRoutine = ({
             Purba Rampura High School & College
           </h2>
           <h3 className='text-semibold text-xl flex flex-col justify-center items-center gap-1 w-fit mx-auto'>
-            {examData.examName} - 2022
+            {examData?.examName} - 2022
             <span className='bg-gray-400 py-[1px] w-full'></span>
           </h3>
-          <p>Class - {examData.class}</p>
+          <p>Class - {examData?.class}</p>
         </div>
         <table className='border-collapse w-full my-10 text-gray-600 '>
           <thead>
@@ -46,7 +46,7 @@ const ExamRoutine = ({
               </th>
             </tr>
           </thead>
-          {examData.examsData?.map((item, i) => (
+          {examData?.examsData?.map((item, i) => (
             <ExamRoutineTableData
               key={i}
               data={item}

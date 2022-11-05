@@ -6,6 +6,10 @@ import { useRouter } from "next/router";
 import { NextShield } from "next-shield";
 import Loading from "../components/Loading/Loading";
 import { useEffect, useState } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }) {
   const [showChild, setShowChild] = useState(false);
@@ -37,11 +41,14 @@ function MyApp({ Component, pageProps }) {
         accessRoute='/'
         loginRoute='/login'
         LoadingComponent={<Loading />}>
-        <Provider store={store}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </Provider>
+        <QueryClientProvider client={queryClient}>
+          <Provider store={store}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </Provider>
+          <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
+        </QueryClientProvider>
       </NextShield>
     );
   }

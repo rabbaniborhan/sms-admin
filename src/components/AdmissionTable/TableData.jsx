@@ -13,9 +13,11 @@ const TableData = ({ tableData }) => {
     }
   };
 
+  console.log(tableData);
+
   return (
     <tbody>
-      {tableData.map((item, i) => (
+      {tableData?.map((item, i) => (
         <tr key={i} className={`${i % 2 === 0 ? "bg-[#1EB3A61A]" : ""}`}>
           <td className='py-2.5 px-2 text-center text-sm font-semibold text-primary-text'>
             {item.applicantsName}
@@ -40,7 +42,7 @@ const TableData = ({ tableData }) => {
               className={`py-3 w-20 mx-auto block text-xs font-semibold rounded text-white ${
                 item.payment.status === "paid" ? "bg-primary" : "bg-yellow"
               }`}>
-              {item.payment.status.toUpperCase()}
+              {item?.payment?.status?.toUpperCase()}
             </span>
           </td>
           <td className='py-3 px-2 text-center cursor-pointer'>
