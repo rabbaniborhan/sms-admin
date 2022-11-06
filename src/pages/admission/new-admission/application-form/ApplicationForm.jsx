@@ -5,7 +5,6 @@ import Image from "next/image";
 import AcknowledgementTable from "./ApplicationFormTable";
 
 const ApplicationForm = ({ applicantData }) => {
-  console.log(applicantData);
   const dateOfBirth = moment(applicantData.dateOfBirth)
     .utc()
     .format("DD-MM-YYYY");

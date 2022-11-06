@@ -4,7 +4,7 @@ import { Add, Delete, Eye } from "../../../../constants/icons";
 import { Axios } from "../../../../core/axios";
 import swal from "sweetalert";
 
-const ExamRoutineTableData = ({ examData }) => {
+const ExamRoutineTableData = ({ examData, refetch }) => {
   const router = useRouter();
 
   const handlePushAdd = () => {
@@ -17,7 +17,7 @@ const ExamRoutineTableData = ({ examData }) => {
 
   const handleDelete = async (id) => {
     const { data } = await Axios.delete(`/admin/exam-routine/${id}`);
-    console.log(data);
+    refetch();
     if (data.status === 200) {
       swal("Deleted", "Routine Deleted Successfully", "success");
     }
@@ -25,7 +25,7 @@ const ExamRoutineTableData = ({ examData }) => {
 
   return (
     <tbody>
-      {examData.map((item, i) => (
+      {examData?.map((item, i) => (
         <tr key={i} className={`${i % 2 === 0 ? "bg-[#1EB3A61A]" : ""}`}>
           <td className='py-4 px-20 text-left text-sm font-semibold text-primary-text'>
             {item.examName}

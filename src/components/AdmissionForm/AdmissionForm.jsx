@@ -31,7 +31,7 @@ const AdmissionForm = ({ setShowModal, applicantData }) => {
 
         {/* Admission from inputs */}
         <div>
-          <div className='flex justify-between items-center xl:w-4/5 lg:w-11/12 mx-auto mt-16'>
+          <div className='flex justify-between items-center xl:w-4/5 lg:w-11/12 mx-auto mt-16 pb-20'>
             <AdmissionFormLabels />
             <AdmissionFormColons />
             <AdmissionFormInputs applicantData={applicantData} />
