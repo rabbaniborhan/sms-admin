@@ -7,24 +7,27 @@ import ExamRoutineTable from "./ExamRoutineTable/ExamRoutineTable";
 import { Axios } from "../../../core/axios";
 import { useEffect } from "react";
 import Loading from "../../../components/Loading/Loading";
+import { useQuery } from "react-query";
 
 const ExamsPage = () => {
   const [showModal, setShowModal] = useState(false);
-  const [examData, setExamData] = useState([]);
   const [pagination, setPagination] = useState(1);
 
-  const getData = async () => {
-    const { data } = await Axios(
+  const getData = async (pagination) => {
+    return await Axios.get(
       `/admin/exam-routine?skip=${
         pagination === 1 ? 0 : 10 * pagination - 10
       }&limit=10`
     );
-    setExamData(data.data);
   };
 
-  useEffect(() => {
-    getData();
-  }, [examData]);
+  const { isFetching, data, refetch } = useQuery(
+    ["exam-routine-list", pagination],
+    () => getData(pagination),
+    {
+      keepPreviousData: "true",
+    }
+  );
 
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
@@ -56,8 +59,12 @@ const ExamsPage = () => {
       </div>
 
       <ExamRoutineSearchForm />
-      <ExamRoutineTable examData={examData} setPagination={setPagination} />
-      {!examData.length && (
+      <ExamRoutineTable
+        examData={data?.data?.data}
+        setPagination={setPagination}
+        refetch={refetch}
+      />
+      {isFetching && (
         <Backdrop>
           <Loading />
         </Backdrop>
@@ -65,7 +72,10 @@ const ExamsPage = () => {
 
       {showModal && (
         <Backdrop setShowModal={setShowModal}>
-          <CreateExamRoutineForm setShowModal={setShowModal} />
+          <CreateExamRoutineForm
+            setShowModal={setShowModal}
+            refetch={refetch}
+          />
         </Backdrop>
       )}
     </div>

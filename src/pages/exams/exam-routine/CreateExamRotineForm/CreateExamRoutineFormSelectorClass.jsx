@@ -3,7 +3,7 @@ import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { useEffect } from "react";
 
-const people = [{ name: "6" }, { name: "9" }];
+const people = [{ name: "Select Exam Class" }, { name: "6" }, { name: "9" }];
 
 export default function CreateExamRoutineFormSelectorClass({
   routineData,

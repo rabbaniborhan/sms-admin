@@ -1,8 +1,11 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
+import { useEffect } from "react";
 
-function AdmissionFormSelector({ data }) {
+const data = [{ name: "6" }, { name: "9" }];
+
+function AdmissionFormSelector({ setClassName, className }) {
   const [selected, setSelected] = useState(data[0]);
 
   return (
@@ -11,7 +14,7 @@ function AdmissionFormSelector({ data }) {
         <div className='relative mt-1'>
           <Listbox.Button className='relative cursor-default px-5 py-2.5 w-[600px]  rounded ring-1 ring-gray-400 outline-none text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'>
             <span className='block truncate text-xs font-semibold'>
-              {selected.name}
+              {className}
             </span>
             <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
               <SelectorIcon
@@ -40,6 +43,7 @@ function AdmissionFormSelector({ data }) {
                   {({ selected }) => (
                     <>
                       <span
+                        onClick={() => setClassName(item.name)}
                         className={`block truncate ${
                           selected ? "font-medium" : "font-normal"
                         }`}>

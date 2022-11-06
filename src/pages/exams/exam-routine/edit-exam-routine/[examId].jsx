@@ -76,7 +76,9 @@ const SetExamRoutinePage = () => {
       )}
 
       {isLoading ? (
-        <Loading />
+        <Backdrop>
+          <Loading />
+        </Backdrop>
       ) : (
         <ExamRoutine
           setShowDateModal={setShowDateModal}

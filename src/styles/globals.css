@@ -11,6 +11,11 @@ body {
     color: #fff!important;
 }
 
+.swal-button, .swal-button--confirm {
+    background: #1EB3A6!important;
+    color: #fff!important;
+}
+
 
 .Calendar {
   --cl-color-black: #444444;
@@ -139,5 +144,6 @@ body {
     .table-polygon {
         clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
+    
 
 }

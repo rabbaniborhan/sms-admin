@@ -7,7 +7,7 @@ import CreateExamRoutineFormSelectorExamName from "./CreateExamRoutineFormSelect
 import CreateExamRoutineFormSelectorExamYear from "./CreateExamRoutineFormSelectorExamYear";
 import swal from "sweetalert";
 
-const CreateExamRoutineForm = ({ setShowModal }) => {
+const CreateExamRoutineForm = ({ setShowModal, refetch }) => {
   const [routineData, setRoutineData] = useState({
     class: "",
     examName: "",
@@ -17,16 +17,25 @@ const CreateExamRoutineForm = ({ setShowModal }) => {
   const postExamRoutineData = async (e) => {
     e.preventDefault();
 
-    let config = {
-      method: "post",
-      url: "/admin/exam-routine",
-      data: routineData,
-    };
+    try {
+      let config = {
+        method: "post",
+        url: "/admin/exam-routine",
+        data: routineData,
+      };
 
-    const { data } = await Axios(config);
-    console.log(data);
-    if (data.status === 201) {
-      swal("Successful!", "Routine Added Successfully!", "success");
+      const { data } = await Axios(config);
+      refetch();
+      swal(data.message, "Exam Routine Created Successfully!", "success");
+    } catch (error) {
+      let err = "";
+      if (error.response.data.errors === null) {
+        err = error.response.data.message;
+      } else {
+        err = error.response.data.errors[0].msg;
+      }
+
+      swal(err, "An Error Has Occured", "error");
     }
   };
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import PaginationRounded from "../../../../components/PaginationRounded/PaginationRounded";
 import ExamRoutineTableData from "./ExamRoutineTableData";
 
-const ExamRoutineTable = ({ examData, setPagination }) => {
+const ExamRoutineTable = ({ examData, setPagination, refetch }) => {
   return (
     <div className='w-full mx-auto mt-16'>
       <table className='w-full ring-[0.3px] ring-[#5E5E5E] bg-white rounded overflow-hidden'>
@@ -17,10 +17,10 @@ const ExamRoutineTable = ({ examData, setPagination }) => {
           </tr>
         </thead>
 
-        <ExamRoutineTableData examData={examData} />
+        <ExamRoutineTableData examData={examData} refetch={refetch} />
       </table>
       <div className='flex justify-between items-center mt-5'>
-        <p className='font-semibold text-sm'>{examData.length} Result</p>
+        <p className='font-semibold text-sm'>{examData?.length} Result</p>
         <PaginationRounded setPagination={setPagination} />
       </div>
     </div>

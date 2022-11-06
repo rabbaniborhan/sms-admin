@@ -4,6 +4,7 @@ import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 import { useEffect } from "react";
 
 const people = [
+  { name: "Select Exam Name" },
   { name: "First Term Examination" },
   { name: "Second Term Examination" },
   { name: "Annual Examination" },
