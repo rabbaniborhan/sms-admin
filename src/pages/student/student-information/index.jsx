@@ -3,7 +3,7 @@ import StudentInfoTotalSection from "./StudentInfoTotalSection/StudentInfoTotalS
 import PaymentFilterButtons from "../../payment/PaymentFilterButtons/PaymentFilterButtons";
 import StudentInfoSearchForm from "./StudentInfoSearchForm/StudentInfoSearchForm";
 import StudentInfoTable from "./StudentInfoTable/StudentInfoTable";
-import StudentInfoAddForm from "./StudentInfoAddForm/StudentInfoAddForm";
+import StudentInfoEditForm from "./StudentInfoEditForm/StudentInfoEditForm";
 import { Backdrop } from "../../../components";
 import { useState } from "react";
 
@@ -50,7 +50,7 @@ const StudentInfoPage = () => {
 
       {showEditModal && (
         <Backdrop setShowModal={setShowEditModal}>
-          <StudentInfoAddForm
+          <StudentInfoEditForm
             setShowModal={setShowEditModal}
             title='Edit Student Info'
           />

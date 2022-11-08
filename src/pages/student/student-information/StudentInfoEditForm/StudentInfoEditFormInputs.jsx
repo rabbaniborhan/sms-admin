@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { useState } from "react";
-import StudentInfoAddFormSelector from "./StudentInfoAddFormSelector";
+import StudentInfoAddFormSelector from "./StudentInfoEditFormSelector";
 import moment from "moment/moment";
 import { Axios } from "../../../../core/axios";
 import swal from "sweetalert";
 
-const StudentInfoAddFormInputs = () => {
-  const [studentClass, setStudentClass] = useState("");
+const StudentInfoEditFormInputs = ({ studentData }) => {
+  const [studentClass, setStudentClass] = useState(studentData?.class);
   const pscRollRef = useRef();
   const jscRollRef = useRef();
   const registrationNoRef = useRef();
@@ -25,6 +25,8 @@ const StudentInfoAddFormInputs = () => {
   const gpaRef = useRef();
   const institutionNameRef = useRef();
   const boardRef = useRef();
+
+  const dateOfBirth = moment(studentData?.dateOfBirth).format("DD/MM/YYYY");
 
   //Student creating function
   const createStudent = async (e) => {
@@ -52,11 +54,11 @@ const StudentInfoAddFormInputs = () => {
         board: boardRef.current.value,
       };
       const { data } = await Axios({
-        method: "post",
-        url: "/admin/student",
+        method: "patch",
+        url: `/admin/student/${studentData._id}`,
         data: student,
       });
-      swal(data.message, "Student Created Successfully!", "success");
+      swal(data.message, "Successful", "success");
     } catch (error) {
       let err = "";
       if (error.response.data.errors === null) {
@@ -73,42 +75,51 @@ const StudentInfoAddFormInputs = () => {
     <form
       className='text-primary-text lg:space-y-6 xl:space-y-5 flex justify-start items-start flex-col relative'
       onSubmit={createStudent}>
-      <StudentInfoAddFormSelector setStudentClass={setStudentClass} />
+      <StudentInfoAddFormSelector
+        setStudentClass={setStudentClass}
+        studentClass={studentClass}
+      />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter P.S.C Roll No'
         ref={pscRollRef}
+        defaultValue={studentData?.pscRoll}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter J.S.C Roll No'
         ref={jscRollRef}
+        defaultValue={studentData?.jscRoll}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Registration No'
         ref={registrationNoRef}
+        defaultValue={studentData?.registrationNo}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's name"
         ref={nameRef}
+        defaultValue={studentData?.name}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Father’s name"
         ref={fatherNameRef}
+        defaultValue={studentData?.fatherName}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Mother’s name"
         ref={motherNameRef}
+        defaultValue={studentData?.motherName}
       />
 
       <div className='flex justify-between items-center gap-2 w-[600px]'>
@@ -117,6 +128,7 @@ const StudentInfoAddFormInputs = () => {
           className='px-5 xl:py-2 lg:py-1.5 w-full rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder='Date Of Birth'
           ref={dateOfBirthRef}
+          defaultValue={dateOfBirth}
         />
         {/* <input
           type='text'
@@ -135,6 +147,7 @@ const StudentInfoAddFormInputs = () => {
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Entre Phone Number'
         ref={phoneRef}
+        defaultValue={studentData?.phone}
       />
 
       {/* Text input with radio's */}
@@ -144,6 +157,7 @@ const StudentInfoAddFormInputs = () => {
           className='px-5 xl:py-2 lg:py-1.5 w-[300px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder="Enter Applicant's Religion"
           ref={religionRef}
+          defaultValue={studentData?.religion}
         />
         <div className='flex justify-center items-center gap-6 w-[300px]'>
           <span className='xl:text-lg lg:text-md font-semibold'>Gender :</span>
@@ -155,6 +169,7 @@ const StudentInfoAddFormInputs = () => {
               className='w-4 h-4'
               value='male'
               ref={genderRef}
+              defaultValue={studentData?.gender}
             />
             <label htmlFor='male' className='text-md font-semibold'>
               Male
@@ -169,6 +184,7 @@ const StudentInfoAddFormInputs = () => {
               className='w-4 h-4'
               value='female'
               ref={genderRef}
+              defaultValue={studentData?.gender}
             />
             <label htmlFor='female' className='text-md font-semibold'>
               Female
@@ -183,6 +199,7 @@ const StudentInfoAddFormInputs = () => {
           className='px-5 xl:py-2 lg:py-1.5 w-[230px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder="Enter Applicant's Blood Group"
           ref={bloodGroupRef}
+          defaultValue={studentData?.bloodGroup}
         />
 
         <label htmlFor='' className='xl:text-xl lg:text-md text-primary-text'>
@@ -193,6 +210,7 @@ const StudentInfoAddFormInputs = () => {
           className='px-5 xl:py-2 lg:py-1.5 w-[230px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
           placeholder="Enter Applicant's Nationality"
           ref={nationalityRef}
+          defaultValue={studentData?.nationality}
         />
       </div>
 
@@ -201,6 +219,7 @@ const StudentInfoAddFormInputs = () => {
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Present Address'
         ref={presentAddressRef}
+        defaultValue={studentData?.presentAddress}
       />
 
       <input
@@ -208,30 +227,35 @@ const StudentInfoAddFormInputs = () => {
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Permanent Address'
         ref={permanentAddressRef}
+        defaultValue={studentData?.permanentAddress}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Passing Year"
         ref={passingYearRef}
+        defaultValue={studentData?.passingYear}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder="Enter Applicant's Result/GPA"
         ref={gpaRef}
+        defaultValue={studentData?.gpa}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Institution Name'
         ref={institutionNameRef}
+        defaultValue={studentData?.institutionName}
       />
       <input
         type='text'
         className='px-5 xl:py-2 lg:py-1.5 w-[600px] rounded ring-1 ring-gray-400 outline-none placeholder:text-sm'
         placeholder='Enter Board Name'
         ref={boardRef}
+        defaultValue={studentData?.board}
       />
       <label
         htmlFor='file'
@@ -244,10 +268,10 @@ const StudentInfoAddFormInputs = () => {
       </label>
 
       <button className='py-3 px-8 bg-primary text-white rounded absolute -bottom-20 right-0'>
-        Create
+        Update
       </button>
     </form>
   );
 };
 
-export default StudentInfoAddFormInputs;
+export default StudentInfoEditFormInputs;

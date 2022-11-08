@@ -1,6 +1,6 @@
 import React from "react";
 
-const StudentInfoAddFormLables = () => {
+const StudentInfoEditFormLables = () => {
   return (
     <div className='text-primary-text xl:space-y-8 lg:space-y-9 flex justify-start items-start flex-col lg:text-md xl:text-xl'>
       <label htmlFor=''>Application for class </label>
@@ -25,4 +25,4 @@ const StudentInfoAddFormLables = () => {
   );
 };
 
-export default StudentInfoAddFormLables;
+export default StudentInfoEditFormLables;

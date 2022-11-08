@@ -1,7 +1,27 @@
+import { useRouter } from "next/router";
 import React from "react";
+import { useQuery } from "react-query";
+import { Backdrop } from "../../../../components";
+import { Axios } from "../../../../core/axios";
 import StudentInfoSlip from "./StudentInfoSlip/StudentInfoSlip";
+import Loading from "../../../../components/Loading/Loading";
 
 const ViewStudentInfoPage = () => {
+  const router = useRouter();
+  const studentId = router.query.studentId;
+
+  const getData = (studentId) => {
+    return Axios.get(`/admin/student/${studentId}`);
+  };
+
+  const { isFetching, data } = useQuery(
+    ["individual-student", studentId],
+    () => getData(studentId),
+    {
+      enabled: !!router.isReady,
+    }
+  );
+
   return (
     <div className='w-11/12 mx-auto mt-10 pb-32'>
       <div>
@@ -21,7 +41,11 @@ const ViewStudentInfoPage = () => {
           </div>
         </div>
       </div>
-      <StudentInfoSlip />
+      {isFetching ? (
+        <Loading />
+      ) : (
+        <StudentInfoSlip studentData={data?.data?.data} />
+      )}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import AdmissionFormLabels from "./AdmissionFormLabels";
 const AdmissionForm = ({ setShowModal, applicantData }) => {
   return (
     <div>
-      <div className='w-[1000px] mx-auto p-10 bg-white text-primary-text relative'>
+      <div className='w-[1000px] rounded-lg mx-auto p-10 bg-white text-primary-text relative'>
         <button onClick={() => setShowModal(false)}>
           <Cross className='w-6 h-6 absolute top-4 right-4 cursor-pointer' />
         </button>

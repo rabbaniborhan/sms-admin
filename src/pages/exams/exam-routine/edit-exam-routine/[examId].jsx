@@ -16,13 +16,16 @@ const SetExamRoutinePage = () => {
   const router = useRouter();
   const examId = router.query.examId;
 
-  const getData = () => {
+  const getData = (examId) => {
     return Axios(`/admin/exam-routine/${examId}`);
   };
 
   const { isLoading, data, refetch } = useQuery(
-    "individual-routine-data",
-    getData
+    ["individual-routine-data", examId],
+    () => getData(examId),
+    {
+      enabled: !!router.isReady,
+    }
   );
 
   return (

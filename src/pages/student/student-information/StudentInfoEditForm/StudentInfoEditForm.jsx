@@ -1,10 +1,21 @@
 import React from "react";
+import { useQuery } from "react-query";
+import { useSelector } from "react-redux";
 import { Cross } from "../../../../constants/icons";
-import StudentInfoAddFormColons from "./StudentInfoAddFormColons";
-import StudentInfoAddFormInputs from "./StudentInfoAddFormInputs";
-import StudentInfoAddFormLables from "./StudentInfoAddFormLables";
+import { Axios } from "../../../../core/axios";
+import StudentInfoEditFormColons from "./StudentInfoEditFormColons";
+import StudentInfoEditFormInputs from "./StudentInfoEditFormInputs";
+import StudentInfoEditFormLables from "./StudentInfoEditFormLables";
 
-const StudentInfoAddForm = ({ setShowModal, title }) => {
+const StudentInfoEditForm = ({ setShowModal, title }) => {
+  const studentId = useSelector((state) => state.id.studentId);
+  const getData = (studentId) => {
+    return Axios.get(`/admin/student/${studentId}`);
+  };
+
+  const { data } = useQuery(["individual-student", studentId], () =>
+    getData(studentId)
+  );
   return (
     <div>
       <div className='w-[1000px] rounded-lg mx-auto py-10 px-10 bg-white text-primary-text relative'>
@@ -32,13 +43,13 @@ const StudentInfoAddForm = ({ setShowModal, title }) => {
         {/* Admission from inputs */}
 
         <div className='flex justify-between items-center xl:w-4/5 lg:w-11/12 mx-auto mt-16 pb-20'>
-          <StudentInfoAddFormLables />
-          <StudentInfoAddFormColons />
-          <StudentInfoAddFormInputs />
+          <StudentInfoEditFormLables />
+          <StudentInfoEditFormColons />
+          <StudentInfoEditFormInputs studentData={data?.data?.data} />
         </div>
       </div>
     </div>
   );
 };
 
-export default StudentInfoAddForm;
+export default StudentInfoEditForm;
