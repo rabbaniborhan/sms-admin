@@ -1,6 +1,6 @@
 import React from "react";
 
-const StudentInfoAddFormColons = () => {
+const StudentInfoEditFormColons = () => {
   return (
     <div className='text-primary-text space-y-8 flex justify-start items-start flex-col text-xl'>
       <label htmlFor=''>:</label>
@@ -25,4 +25,4 @@ const StudentInfoAddFormColons = () => {
   );
 };
 
-export default StudentInfoAddFormColons;
+export default StudentInfoEditFormColons;

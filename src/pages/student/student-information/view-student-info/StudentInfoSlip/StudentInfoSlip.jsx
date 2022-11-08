@@ -4,9 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { Backdrop } from "../../../../../components";
 import CredentialsForm from "../CradentialsForm/CradentialsForm";
+import moment from "moment/moment";
 
-const StudentInfoSlip = () => {
+const StudentInfoSlip = ({ studentData }) => {
   const [showModal, setShowModal] = useState(false);
+  const dateOfBirth = moment(studentData?.dateOfBirth).format("DD/MM/YYYY");
 
   return (
     <div className='w-3/4 mx-auto '>
@@ -69,20 +71,24 @@ const StudentInfoSlip = () => {
                 <p>:</p>
               </div>
               <div className='space-y-5 font-bold text-md'>
-                <p>Shanto Kumar</p>
-                <p>Abul Khayer</p>
-                <p>Ferdous Begum</p>
-                <p>One</p>
-                <p>09</p>
-                <p>2022</p>
-                <p>23/07/2015</p>
-                <p>01647622755</p>
-                <p>Islam</p>
-                <p>A+ (Positive)</p>
-                <p>Male</p>
-                <p>Bangladeshi</p>
-                <p>Zero point, Rajshahi</p>
-                <p>Zero point, Rajshahi</p>
+                <p className='capitalize'>{studentData?.name}</p>
+                <p className='capitalize'>{studentData?.fatherName}</p>
+                <p className='capitalize'>{studentData?.motherName}</p>
+                <p className='capitalize'>{studentData?.class}</p>
+                <p className='capitalize'>{studentData?.roll}</p>
+                <p className='capitalize'>{studentData?.passingYear}</p>
+                <p>{dateOfBirth}</p>
+                <p className='capitalize'>{studentData?.phone}</p>
+                <p className='capitalize'>{studentData?.religion}</p>
+                <p className='capitalize'>
+                  {studentData?.bloodGroup.includes("+")
+                    ? studentData?.bloodGroup + " " + "(Positive)"
+                    : studentData?.bloodGroup + " " + "(Negative)"}
+                </p>
+                <p className='capitalize'>{studentData?.gender}</p>
+                <p className='capitalize'>{studentData?.nationality}</p>
+                <p className='capitalize'>{studentData?.presentAddress}</p>
+                <p className='capitalize'>{studentData?.permanentAddress}</p>
               </div>
             </div>
           </div>

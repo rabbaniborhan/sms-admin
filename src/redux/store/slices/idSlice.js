@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const idState = {
   id: "",
+  studentId: "",
 };
 
 const idSlice = createSlice({
@@ -10,7 +11,9 @@ const idSlice = createSlice({
   reducers: {
     setId: (state, { payload }) => {
       state.id = payload.id;
-      console.log(state.id);
+    },
+    setStudentId: (state, { payload }) => {
+      state.studentId = payload.studentId;
     },
   },
 });
