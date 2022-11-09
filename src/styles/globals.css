@@ -6,7 +6,7 @@ body {
     background: #f2fbfa;
 }
 
-.css-10w330c-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+.Mui-selected {
     background: #1EB3A6!important;
     color: #fff!important;
 }

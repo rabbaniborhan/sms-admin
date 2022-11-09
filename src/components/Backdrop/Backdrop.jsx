@@ -15,7 +15,7 @@ const Backdrop = ({ children, setShowModal }) => {
         router.asPath.includes("/student/student-information")
           ? "absolute -mb-96"
           : "fixed"
-      } top-0 inset-0 z-10 flex justify-center items-center w-[87%] ml-auto`}
+      } top-0 inset-0 z-10 flex justify-center items-center lg:w-[87%] xl:w-[90%] ml-auto`}
       id='backdrop'
       onClick={handleShowModal}>
       {children}

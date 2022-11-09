@@ -31,19 +31,19 @@ const ApplicationFormTable = ({ tableData }) => {
             JSC/Equlv.
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            {tableData.jscRoll}
+            {tableData?.jscRoll}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            {tableData.board}
+            {tableData?.board}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            {tableData.passingYear}
+            {tableData?.passingYear}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            {tableData.institutionName}
+            {tableData?.institutionName}
           </td>
           <td className='py-2 px-3 text-center border-[0.5px] border-gray-500'>
-            {tableData.gpa}
+            {tableData?.gpa}
           </td>
         </tr>
       </tbody>

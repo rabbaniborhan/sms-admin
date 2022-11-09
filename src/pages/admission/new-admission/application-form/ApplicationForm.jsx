@@ -5,10 +5,10 @@ import Image from "next/image";
 import AcknowledgementTable from "./ApplicationFormTable";
 
 const ApplicationForm = ({ applicantData }) => {
-  const dateOfBirth = moment(applicantData.dateOfBirth)
+  const dateOfBirth = moment(applicantData?.dateOfBirth)
     .utc()
     .format("DD-MM-YYYY");
-  const dateOfApply = moment(applicantData.createdAt)
+  const dateOfApply = moment(applicantData?.createdAt)
     .utc()
     .format("DD-MM-YYYY");
   return (
@@ -63,18 +63,18 @@ const ApplicationForm = ({ applicantData }) => {
                 <p>:</p>
               </div>
               <div className='space-y-5 font-bold text-md'>
-                <p>{applicantData.applicantsId}</p>
-                <p>{applicantData.applicantsClass}</p>
-                <p>{applicantData.applicantsName}</p>
-                <p>{applicantData.fatherName}</p>
-                <p>{applicantData.motherName}</p>
+                <p>{applicantData?.applicantsId}</p>
+                <p>{applicantData?.applicantsClass}</p>
+                <p>{applicantData?.applicantsName}</p>
+                <p>{applicantData?.fatherName}</p>
+                <p>{applicantData?.motherName}</p>
                 <p>{dateOfBirth}</p>
-                <p>{applicantData.phone}</p>
-                <p>{applicantData.religion}</p>
-                <p>{applicantData.gender}</p>
-                <p>{applicantData.bloodGroup}</p>
-                <p>{applicantData.presentAddress}</p>
-                <p>{applicantData.permanentAddress}</p>
+                <p>{applicantData?.phone}</p>
+                <p>{applicantData?.religion}</p>
+                <p>{applicantData?.gender}</p>
+                <p>{applicantData?.bloodGroup}</p>
+                <p>{applicantData?.presentAddress}</p>
+                <p>{applicantData?.permanentAddress}</p>
               </div>
             </div>
             <div className=' flex justify-between capitalize'>
