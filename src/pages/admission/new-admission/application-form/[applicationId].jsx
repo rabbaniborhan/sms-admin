@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { useQuery } from "react-query";
 import { Pencil } from "../../../../constants/icons";
 import { Axios } from "../../../../core/axios";
 import ApplicationForm from "./ApplicationForm";
@@ -8,18 +9,20 @@ import ApplicationFormEdit from "./ApplicationFormEdit";
 
 const ApplicationFormPage = ({ applicantData }) => {
   const [showModal, setShowModal] = useState(false);
-  const [data, setData] = useState({});
   const router = useRouter();
   const appId = router.query.applicationId;
 
-  const fetchData = async () => {
-    const { data } = await Axios(`/admin/admission/${appId}`);
-    setData(data.data);
+  const fetchData = async (appId) => {
+    return Axios.get(`/admin/admission/${appId}`);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [data]);
+  const { isFetching, data } = useQuery(
+    ["individual-applicant-data", appId],
+    () => fetchData(appId),
+    {
+      enabled: !!router.isReady,
+    }
+  );
 
   return (
     <div className='w-full mx-auto mt-10 pb-32'>
@@ -47,9 +50,12 @@ const ApplicationFormPage = ({ applicantData }) => {
           Edit <Pencil />
         </button>
       </div>
-      <ApplicationForm applicantData={data} />
+      <ApplicationForm applicantData={data?.data?.data} />
       {showModal && (
-        <ApplicationFormEdit applicantData={data} setShowModal={setShowModal} />
+        <ApplicationFormEdit
+          applicantData={data?.data?.data}
+          setShowModal={setShowModal}
+        />
       )}
     </div>
   );

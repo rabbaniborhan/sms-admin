@@ -24,7 +24,7 @@ const AdmissionFormInputs = ({ applicantData }) => {
   const institutionNameRef = useRef();
   const boardRef = useRef();
 
-  const dateOfBirth = moment(applicantData.dateOfBirth).format("MM/DD/YYYY");
+  const dateOfBirth = moment(applicantData?.dateOfBirth).format("MM/DD/YYYY");
 
   const editStudentInfo = async (e) => {
     e.preventDefault();
