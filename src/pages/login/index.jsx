@@ -13,9 +13,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const router = useRouter();
-  if (router.asPath.includes("/login")) {
-    dispatch(uiActions.setLayout());
-  }
+  // if (router.asPath.includes("/login")) {
+  //   dispatch(uiActions.setLayout());
+  // }
 
   //Admin Login function
   const login = async (e) => {

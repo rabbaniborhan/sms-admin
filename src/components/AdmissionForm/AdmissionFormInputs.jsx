@@ -57,8 +57,10 @@ const AdmissionFormInputs = ({ applicantData }) => {
 
       swal(data.message, "Information Edited Successfully!", "success");
     } catch (error) {
-      const err = error.response.data.errors[0].msg;
-      console.log(error);
+      const err =
+        error.response.data.errors === undefined
+          ? error.response.data.message
+          : error.response.data.errors[0].msg;
       swal(err, "An Error Has Occured!", "error");
     }
   };

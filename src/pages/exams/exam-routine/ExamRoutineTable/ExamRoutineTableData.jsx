@@ -7,8 +7,8 @@ import swal from "sweetalert";
 const ExamRoutineTableData = ({ examData, refetch }) => {
   const router = useRouter();
 
-  const handlePushAdd = () => {
-    router.push("/exams/exam-routine/set-exam-routine");
+  const handlePushAdd = (id) => {
+    router.push(`/exams/exam-routine/set-exam-routine/${id}`);
   };
 
   const handlePushShow = (id) => {
@@ -39,7 +39,7 @@ const ExamRoutineTableData = ({ examData, refetch }) => {
 
           <td className='py-3 px-2 text-center'>
             <span className='space-x-2'>
-              <button onClick={handlePushAdd}>
+              <button onClick={() => handlePushAdd(item._id)}>
                 <Add className='text-primary h-6 w-6 cursor-pointer' />
               </button>
               <button onClick={() => handlePushShow(item._id)}>
