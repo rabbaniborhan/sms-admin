@@ -17,19 +17,21 @@ const Navbar = () => {
 
   return (
     <div className='h-16 w-full flex justify-around items-center bg-[#1EB3A6] overflow-hidden py-3 fixed z-10'>
-      <div className='flex justify-center items-center gap-3'>
-        <Image
-          src={images.principal}
-          alt='admin_image'
-          height={40}
-          width={40}
-        />
-        <div className='text-white'>
-          <p className='text-xs'>Welcome,</p>
-          <h3 className='font-semibold text-sm'>{data?.data?.data?.name}</h3>
-          <p className='text-xs capitalize'>{data?.data?.data?.access}</p>
+      {data?.status === 200 && (
+        <div className='flex justify-center items-center gap-3'>
+          <Image
+            src={images.principal}
+            alt='admin_image'
+            height={40}
+            width={40}
+          />
+          <div className='text-white'>
+            <p className='text-xs'>Welcome,</p>
+            <h3 className='font-semibold text-sm'>{data?.data?.data?.name}</h3>
+            <p className='text-xs capitalize'>{data?.data?.data?.access}</p>
+          </div>
         </div>
-      </div>
+      )}
 
       <form className='flex justify-center items-center gap-10 -mr-52'>
         <div className='relative'>
