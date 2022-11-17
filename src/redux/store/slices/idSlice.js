@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const idState = {
   id: "",
   studentId: "",
+  noticeId: "",
 };
 
 const idSlice = createSlice({
@@ -14,6 +15,9 @@ const idSlice = createSlice({
     },
     setStudentId: (state, { payload }) => {
       state.studentId = payload.studentId;
+    },
+    setNoticeId: (state, { payload }) => {
+      state.noticeId = payload.noticeId;
     },
   },
 });

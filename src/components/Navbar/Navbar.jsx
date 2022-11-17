@@ -13,8 +13,6 @@ const Navbar = () => {
 
   const { data } = useQuery("admin-data", getData);
 
-  console.log(data);
-
   return (
     <div className='h-16 w-full flex justify-around items-center bg-[#1EB3A6] overflow-hidden py-3 fixed z-10'>
       {data?.status === 200 && (
